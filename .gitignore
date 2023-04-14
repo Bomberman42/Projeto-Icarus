@@ -1,8 +1,8 @@
 Library
 Logs
-ProjectSettings
+#ProjectSettings
 Temp
-UserSettings
+#UserSettings
 .vsconfig
 .vs
 obj
