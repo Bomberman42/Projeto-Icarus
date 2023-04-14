@@ -59,6 +59,8 @@
     <Compile Include="Assets\Scripts\Fruta.cs" />
     <Compile Include="Assets\Scripts\GameControle.cs" />
     <Compile Include="Assets\Scripts\Heroi.cs" />
+    <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
+    <Compile Include="Assets\Scripts\PlataformaQueAnda.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
