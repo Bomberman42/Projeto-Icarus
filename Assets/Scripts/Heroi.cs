@@ -81,7 +81,7 @@ public class Heroi : MonoBehaviour
                 {
                     this.audioPulo.Stop();
                     //this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo - nerfPulo), ForceMode2D.Impulse);
-                    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo - nerfPulo))
+                    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo - nerfPulo));
                     this.audioPulo.Play();
                     this.puloDuplo = false;   
                 }
