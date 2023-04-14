@@ -69,7 +69,8 @@ public class Heroi : MonoBehaviour
 
             if(!this.estaPulando)
             {
-                this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo), ForceMode2D.Impulse);
+                //this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo), ForceMode2D.Impulse);
+                this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, this.alturaPulo);
                 this.puloDuplo = true;
                 this.animator.SetBool("pular", true);
                 this.audioPulo.Play();
@@ -79,7 +80,8 @@ public class Heroi : MonoBehaviour
                 if (this.puloDuplo)
                 {
                     this.audioPulo.Stop();
-                    this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo - nerfPulo), ForceMode2D.Impulse);
+                    //this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo - nerfPulo), ForceMode2D.Impulse);
+                    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo - nerfPulo))
                     this.audioPulo.Play();
                     this.puloDuplo = false;   
                 }
