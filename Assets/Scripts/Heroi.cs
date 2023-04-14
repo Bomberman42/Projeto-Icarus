@@ -47,7 +47,7 @@ public class Heroi : MonoBehaviour
     {
         float direction = Input.GetAxis("Horizontal");
 
-        if (direction == 0f || this.estaBatendoNaParede)
+        if (direction == 0f)
         {
             this.animator.SetBool("correr", false);
             return;
@@ -91,14 +91,14 @@ public class Heroi : MonoBehaviour
             this.tocandoOChao = true;
             this.estaPulando = false;
             this.animator.SetBool("pular", false);
-            this.estaBatendoNaParede = false;
+            //this.estaBatendoNaParede = false;
         }
 
-        if (collision.gameObject.layer == this.indexLayerParede && this.tocandoOChao == false)
-        {
-            this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.position.x, this.fisicaDoHeroi.position.y - 2);
-            this.estaBatendoNaParede = true;
-        }
+        //if (collision.gameObject.layer == this.indexLayerParede && this.tocandoOChao == false)
+        //{
+        //    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.position.x, this.fisicaDoHeroi.position.y - 2);
+        //    this.estaBatendoNaParede = true;
+        //}
 
     }
 
@@ -121,15 +121,5 @@ public class Heroi : MonoBehaviour
 
         this.animator.SetBool("cair", true);
     }
-
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    //this.estaBatendoNaParede = true;
-    //    if (this.estaPulando == false)
-    //    {
-    //    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.position.x, this.fisicaDoHeroi.position.y - 2);
-    //    }
-    //    Debug.Log(collision.gameObject.layer.ToString());
-    //}
 
 }
