@@ -18,10 +18,13 @@ public class Heroi : MonoBehaviour
     private bool estaPulando;
     private bool puloDuplo;
     private int indexLayerGround = 6;
+    private int indexLayerParede = 7;
     private Animator animator;
     private Vector3 olhandoParaDireita = new Vector3(0f, 0f, 0f);
     private Vector3 olhandoParaEsquerda = new Vector3(0f, 180f, 0f);
     public AudioSource audioPulo;
+    private bool estaBatendoNaParede;
+    public BoxCollider2D colisorDoChao;
 
 
     void Start()
@@ -36,7 +39,6 @@ public class Heroi : MonoBehaviour
 
     void Update()
     {
-
         Movimentar();
         Pular();
         Cair();
@@ -45,16 +47,14 @@ public class Heroi : MonoBehaviour
     {
         float direction = Input.GetAxis("Horizontal");
 
-        if (direction == 0f)
+        if (direction == 0f || this.estaBatendoNaParede)
         {
             this.animator.SetBool("correr", false);
             return;
         }
 
         this.fisicaDoHeroi.velocity = new Vector2(direction * this.velocidade, this.fisicaDoHeroi.velocity.y);
-
         this.transform.eulerAngles = direction > 0f ? this.olhandoParaDireita : this.olhandoParaEsquerda;
-
         this.animator.SetBool("correr", true);
 
     }
@@ -62,14 +62,10 @@ public class Heroi : MonoBehaviour
     private void Pular()
     {
 
-        float nerfPulo = 4;
-
         if (Input.GetKeyDown("space"))
         {
-
             if(!this.estaPulando)
             {
-                //this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo), ForceMode2D.Impulse);
                 this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, this.alturaPulo);
                 this.puloDuplo = true;
                 this.animator.SetBool("pular", true);
@@ -80,8 +76,7 @@ public class Heroi : MonoBehaviour
                 if (this.puloDuplo)
                 {
                     this.audioPulo.Stop();
-                    //this.fisicaDoHeroi.AddForce(new Vector2(0f, this.alturaPulo - nerfPulo), ForceMode2D.Impulse);
-                    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo - nerfPulo));
+                    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo));
                     this.audioPulo.Play();
                     this.puloDuplo = false;   
                 }
@@ -96,7 +91,15 @@ public class Heroi : MonoBehaviour
             this.tocandoOChao = true;
             this.estaPulando = false;
             this.animator.SetBool("pular", false);
+            this.estaBatendoNaParede = false;
         }
+
+        if (collision.gameObject.layer == this.indexLayerParede && this.tocandoOChao == false)
+        {
+            this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.position.x, this.fisicaDoHeroi.position.y - 2);
+            this.estaBatendoNaParede = true;
+        }
+
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -118,5 +121,15 @@ public class Heroi : MonoBehaviour
 
         this.animator.SetBool("cair", true);
     }
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    //this.estaBatendoNaParede = true;
+    //    if (this.estaPulando == false)
+    //    {
+    //    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.position.x, this.fisicaDoHeroi.position.y - 2);
+    //    }
+    //    Debug.Log(collision.gameObject.layer.ToString());
+    //}
 
 }
