@@ -10,6 +10,7 @@ public class GameControle : MonoBehaviour
     private int pontuacaoTotal;
     private int vida;
     public GameObject fimDeJogo;
+    public BarraDeVida barraDeVida;
     
 
     public static GameControle instance;
@@ -37,5 +38,11 @@ public class GameControle : MonoBehaviour
         Time.timeScale = 1;
         Scene cenaAtual = SceneManager.GetActiveScene();
         SceneManager.LoadScene(cenaAtual.name);
+    }
+    
+    public void DanoDoHeroi()
+    {
+        Debug.Log("Dano da vida");
+        this.barraDeVida.AtualizaVida();
     }
 }
