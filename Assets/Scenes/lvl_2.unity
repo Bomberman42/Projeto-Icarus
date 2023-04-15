@@ -15142,18 +15142,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1583581557306645004, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
-      propertyPath: m_Size.y
-      value: 0.17237714
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583581557306645004, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.0020073056
-      objectReference: {fileID: 0}
-    - target: {fileID: 1583581557306645004, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
-      propertyPath: m_Offset.y
-      value: -0.026516758
-      objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645008, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_Name
       value: Heroi
