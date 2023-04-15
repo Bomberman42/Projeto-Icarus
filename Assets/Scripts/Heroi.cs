@@ -57,7 +57,6 @@ public class Heroi : MonoBehaviour
         this.fisicaDoHeroi.velocity = new Vector2(direction * this.velocidade, this.fisicaDoHeroi.velocity.y);
         this.transform.eulerAngles = direction > 0f ? this.olhandoParaDireita : this.olhandoParaEsquerda;
         this.animator.SetBool("correr", true);
-
     }
 
     private void Pular()

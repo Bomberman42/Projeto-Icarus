@@ -2691,7 +2691,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1421663257}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b270b0972dfd1f5448c3d5f732b14a5c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3846,7 +3846,7 @@ TilemapCollider2D:
   m_GameObject: {fileID: 1501013022}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: d1ac5770a5ab23349ac824099266badf, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -3857,6 +3857,11 @@ TilemapCollider2D:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5475756376671486564, guid: a097920d03e37bf4d8a5b8dd0bca6c54, type: 3}
   m_PrefabInstance: {fileID: 1041473279}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1723459882 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 1583581557306645011, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
+  m_PrefabInstance: {fileID: 1583581557283142172}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1784985258 stripped
 Transform:
@@ -14210,6 +14215,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlataformaFlutuante
       objectReference: {fileID: 0}
+    - target: {fileID: 7216738324942831275, guid: 895750add12a4fb42bcef0772f27fc40, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: e99a603f10cf65446bbedf62c564ce28, type: 2}
     - target: {fileID: 7216738324942831276, guid: 895750add12a4fb42bcef0772f27fc40, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -14258,6 +14267,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7216738324942831278, guid: 895750add12a4fb42bcef0772f27fc40, type: 3}
+      propertyPath: heroi
+      value: 
+      objectReference: {fileID: 1723459882}
     - target: {fileID: 7216738324942831279, guid: 895750add12a4fb42bcef0772f27fc40, type: 3}
       propertyPath: m_Angle
       value: 180
@@ -14278,6 +14291,10 @@ PrefabInstance:
       propertyPath: m_TranslationLimits.m_UpperTranslation
       value: 1.8
       objectReference: {fileID: 0}
+    - target: {fileID: 7216738324942831281, guid: 895750add12a4fb42bcef0772f27fc40, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: e99a603f10cf65446bbedf62c564ce28, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 895750add12a4fb42bcef0772f27fc40, type: 3}
 --- !u!1001 &1896541662
