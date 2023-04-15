@@ -13,6 +13,7 @@ TagManager:
   - FrutaMelancia
   - FrutaKiwi
   - FrutaMorango
+  - PlataformaFlutuante
   layers:
   - Default
   - TransparentFX
