@@ -145,8 +145,8 @@ SliderJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 2.4012642, y: -2.3845167}
+  m_Anchor: {x: -0.000000010928119, y: -0.0000000014607906}
+  m_ConnectedAnchor: {x: 0.59999996, y: -2.38}
   m_AutoConfigureAngle: 0
   m_Angle: 180
   m_UseMotor: 1
@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heroi: {fileID: 0}
+  temEspinhos: 0
+  espinhos: {fileID: 0}
 --- !u!61 &7216738324942831281
 BoxCollider2D:
   m_ObjectHideFlags: 0

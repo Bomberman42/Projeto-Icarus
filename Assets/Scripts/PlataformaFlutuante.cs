@@ -6,12 +6,18 @@ public class PlataformaFlutuante : MonoBehaviour
 {
     private SliderJoint2D movimentarPlataforma;
     private JointMotor2D motor2D;
-    public Rigidbody2D heroi;
+    public bool temEspinhos;
+    public GameObject espinhos;
 
     void Start()
     {
         this.movimentarPlataforma = GetComponent<SliderJoint2D>();
         this.motor2D = this.movimentarPlataforma.motor;
+
+        if (this.temEspinhos)
+        {
+            InvokeRepeating("AtualizaEstadoDosEspinhos", 3.0f, 3.0f);
+        }
     }
 
     private void Movimentar()
@@ -34,11 +40,16 @@ public class PlataformaFlutuante : MonoBehaviour
         Movimentar();
     }
 
+    private void AtualizaEstadoDosEspinhos()
+    {
+        this.espinhos.SetActive(!this.espinhos.activeSelf);
+    }
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         collision.gameObject.transform.parent = this.transform;
-        //collision.gameObject.transform.position = new Vector2(this.transform.position.x, collision.gameObject.transform.position.y);
     }
+
     private void OnCollisionExit2D(Collision2D collision)
     {
         collision.gameObject.transform.parent = null;
