@@ -6,19 +6,20 @@ public class PlataformaQueCaii : MonoBehaviour
 {
     public float tempoDeQueda;
 
+
     private TargetJoint2D gatilho;
-    private BoxCollider2D colisaoDaPlataforma;
     private int indexLayerFimDeJogo = 8;
+    private BoxCollider2D colisaoDaPlataforma;
 
     void Start()
     {
-       this.gatilho = GetComponent<TargetJoint2D>();
-       this.colisaoDaPlataforma = GetComponent<BoxCollider2D>();       
+       this.colisaoDaPlataforma = GetComponent<BoxCollider2D>();
+       this.gatilho = GetComponent<TargetJoint2D>();   
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             Invoke("QuedaDaPlataforma", tempoDeQueda);
         }
@@ -26,6 +27,9 @@ public class PlataformaQueCaii : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collider)
     {
+
+        Debug.Log(collider.gameObject.tag);
+
         if(collider.gameObject.layer == indexLayerFimDeJogo)
         {
             Destroy(gameObject);
@@ -34,7 +38,8 @@ public class PlataformaQueCaii : MonoBehaviour
 
     private void QuedaDaPlataforma()
     {
-        gatilho.enabled = false;
-        colisaoDaPlataforma.isTrigger = true;
+        this.gatilho.enabled = false;
+        this.colisaoDaPlataforma.isTrigger = true;
     }
+
 }
