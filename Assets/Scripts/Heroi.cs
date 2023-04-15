@@ -18,13 +18,10 @@ public class Heroi : MonoBehaviour
     private bool estaPulando;
     private bool puloDuplo;
     private int indexLayerGround = 6;
-    private int indexLayerParede = 7;
     private Animator animator;
     private Vector3 olhandoParaDireita = new Vector3(0f, 0f, 0f);
     private Vector3 olhandoParaEsquerda = new Vector3(0f, 180f, 0f);
     public AudioSource audioPulo;
-    private bool estaBatendoNaParede;
-    public BoxCollider2D colisorDoChao;
     private int indexLayerFimDeJogo = 8;
 
 
@@ -91,15 +88,7 @@ public class Heroi : MonoBehaviour
             this.tocandoOChao = true;
             this.estaPulando = false;
             this.animator.SetBool("pular", false);
-            //this.estaBatendoNaParede = false;
         }
-
-        //if (collision.gameObject.layer == this.indexLayerParede && this.tocandoOChao == false)
-        //{
-        //    this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.position.x, this.fisicaDoHeroi.position.y - 2);
-        //    this.estaBatendoNaParede = true;
-        //}
-
     }
 
     private void OnCollisionExit2D(Collision2D collision)
