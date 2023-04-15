@@ -40,8 +40,14 @@ public class GameControle : MonoBehaviour
     
     public void DanoDoHeroi(int valorDoDanoAoHeroi)
     {
+        int vidaAtual = this.barraDeVida.RemoveVida(valorDoDanoAoHeroi);
+
+        if (vidaAtual == 0)
+        {
+            FimDeJogo();
+            return;
+        }
+
         this.heroi.SofreuDano();
-        Debug.Log("Dano da vida");
-        this.barraDeVida.RemoveVida(valorDoDanoAoHeroi);
     }
 }

@@ -14,6 +14,7 @@ public class Heroi : MonoBehaviour
     private float velocidade = 7;
     public float alturaPulo;
     private bool tocandoOChao = true;
+    private bool estaTomandoDando;
 
     private bool estaPulando;
     private bool puloDuplo;
@@ -22,7 +23,6 @@ public class Heroi : MonoBehaviour
     private Vector3 olhandoParaDireita = new Vector3(0f, 0f, 0f);
     private Vector3 olhandoParaEsquerda = new Vector3(0f, 180f, 0f);
     public AudioSource audioPulo;
-
 
     void Start()
     {
@@ -40,6 +40,7 @@ public class Heroi : MonoBehaviour
         Pular();
         Cair();
     }
+
     private void Movimentar()
     {
         float direction = Input.GetAxis("Horizontal");
@@ -50,14 +51,20 @@ public class Heroi : MonoBehaviour
             return;
         }
 
-        this.fisicaDoHeroi.velocity = new Vector2(direction * this.velocidade, this.fisicaDoHeroi.velocity.y);
         this.transform.eulerAngles = direction > 0f ? this.olhandoParaDireita : this.olhandoParaEsquerda;
+
+        // Se o heroi esta sofrendo dano, não deve se movimentar por alungs segundos.
+        if (this.estaTomandoDando)
+        {
+            return;
+        }
+
+        this.fisicaDoHeroi.velocity = new Vector2(direction * this.velocidade, this.fisicaDoHeroi.velocity.y);
         this.animator.SetBool("correr", true);
     }
 
     private void Pular()
     {
-
         if (Input.GetKeyDown("space"))
         {
             if(!this.estaPulando)
@@ -112,14 +119,15 @@ public class Heroi : MonoBehaviour
 
     public void SofreuDano()
     {
+        this.estaTomandoDando = true;
+        this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? 2f : -2f, this.fisicaDoHeroi.position.y + 6f);
         this.animator.SetBool("dano", true);
-        this.fisicaDoHeroi.AddForce(Vector2.up * 20f, ForceMode2D.Impulse);
-        Invoke("ParouDeSofrerDano", 1f);
+        Invoke("ParouDeSofrerDano", 0.5f);
     }
 
     private void ParouDeSofrerDano()
     {
+        this.estaTomandoDando = false;
         this.animator.SetBool("dano", false);
     }
-
 }

@@ -10,7 +10,6 @@ public class ArmadilhaDeFogo : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("tocou heroi");
             GameControle.instance.DanoDoHeroi(valorDoDanoAoHeroi);
         }
     }

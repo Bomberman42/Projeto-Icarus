@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BarraDeVida : MonoBehaviour
 {
-    private Animator animacaoDaVida;
-    private int valorMaximoDeVida = 400000;
+    private int valorMaximoDeVida = 4;
     private int vidaAtual = 4;
     public GameObject fullLifeObject;
     public GameObject almostLifeObject;
@@ -16,7 +15,6 @@ public class BarraDeVida : MonoBehaviour
     void Start()
     {
         this.vidaAtual = this.valorMaximoDeVida;
-        this.animacaoDaVida = GetComponent<Animator>();
         this.fullLifeObject.SetActive(true);
         this.almostLifeObject.SetActive(false);
         this.halfLifeObject.SetActive(false);
@@ -26,44 +24,37 @@ public class BarraDeVida : MonoBehaviour
 
     public void AtualizaVida()
     {
-        int death = 0;
-        int onelife = 1;
-        int halflife = 2;
-        int almostlife = 3;
-        int fulllife = 4;
-
         this.fullLifeObject.SetActive(false);
         this.almostLifeObject.SetActive(false);
         this.halfLifeObject.SetActive(false);
         this.oneLifeObject.SetActive(false);
         this.deathObject.SetActive(false);
 
-        if (this.vidaAtual == death)
+        if (this.vidaAtual == 0)
         {
             this.deathObject.SetActive(true);
-            GameControle.instance.FimDeJogo();
             return;
         }
 
-        if (this.vidaAtual == onelife)
+        if (this.vidaAtual == 1)
         {
             this.oneLifeObject.SetActive(true);
             return;
         }
 
-        if (this.vidaAtual == halflife)
+        if (this.vidaAtual == (this.valorMaximoDeVida / 2))
         {
             this.halfLifeObject.SetActive(true);
             return;
         }
 
-        if (this.vidaAtual == almostlife)
+        if (this.vidaAtual == (this.valorMaximoDeVida - 1))
         {
             this.almostLifeObject.SetActive(true);
             return;
         }
 
-        if (this.vidaAtual == fulllife)
+        if (this.vidaAtual == this.valorMaximoDeVida)
         {
             this.fullLifeObject.SetActive( true);
             return;
