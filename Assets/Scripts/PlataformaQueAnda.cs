@@ -39,4 +39,9 @@ public class PlataformaQueAnda : MonoBehaviour
         collision.gameObject.transform.parent = this.transform;
         //collision.gameObject.transform.position = new Vector2(this.transform.position.x, collision.gameObject.transform.position.y);
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        collision.gameObject.transform.parent = null;
+    }
 }
