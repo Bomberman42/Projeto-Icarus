@@ -11,14 +11,12 @@ public class GameControle : MonoBehaviour
     private int vida;
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
-    
 
     public static GameControle instance;
 
     void Start()
     {
       instance = this;
-        
     }
 
     public void FimDeJogo()
@@ -40,9 +38,9 @@ public class GameControle : MonoBehaviour
         SceneManager.LoadScene(cenaAtual.name);
     }
     
-    public void DanoDoHeroi()
+    public void DanoDoHeroi(int valorDoDanoAoHeroi)
     {
         Debug.Log("Dano da vida");
-        this.barraDeVida.AtualizaVida();
+        this.barraDeVida.RemoveVida(valorDoDanoAoHeroi);
     }
 }

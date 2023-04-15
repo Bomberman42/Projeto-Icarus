@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class ArmadilhaDeFogo : MonoBehaviour
 {
+    public int valorDoDanoAoHeroi;
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             Debug.Log("tocou heroi");
-            GameControle.instance.DanoDoHeroi();
+            GameControle.instance.DanoDoHeroi(valorDoDanoAoHeroi);
         }
     }
-
 }
