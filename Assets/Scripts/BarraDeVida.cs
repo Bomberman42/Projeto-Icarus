@@ -7,50 +7,64 @@ public class BarraDeVida : MonoBehaviour
     private Animator animacaoDaVida;
     private int valorMaximoDeVida = 4;
     private int vidaAtual = 4;
+    public GameObject fullLifeObject;
+    public GameObject almostLifeObject;
+    public GameObject halfLifeObject;
+    public GameObject oneLifeObject;
+    public GameObject deathObject;
 
     void Start()
     {
         this.animacaoDaVida = GetComponent<Animator>();
+        this.fullLifeObject.SetActive(true);
+        this.almostLifeObject.SetActive(false);
+        this.halfLifeObject.SetActive(false);
+        this.oneLifeObject.SetActive(false);
+        this.deathObject.SetActive(false);
     }
 
     public void AtualizaVida()
     {
-        Debug.Log(this.vidaAtual);
-
         int death = 0;
         int onelife = 1;
         int halflife = 2;
         int almostlife = 3;
         int fulllife = 4;
 
+        this.fullLifeObject.SetActive(false);
+        this.almostLifeObject.SetActive(false);
+        this.halfLifeObject.SetActive(false);
+        this.oneLifeObject.SetActive(false);
+        this.deathObject.SetActive(false);
+
         if (this.vidaAtual == death)
         {
-            this.animacaoDaVida.SetBool("death", true);
+            this.deathObject.SetActive(true);
             GameControle.instance.FimDeJogo();
             return;
         }
 
         if (this.vidaAtual == onelife)
         {
-            this.animacaoDaVida.SetBool("onelife", true);
+            this.oneLifeObject.SetActive(true);
             return;
         }
 
         if (this.vidaAtual == halflife)
         {
-            this.animacaoDaVida.SetBool("halflife", true);
+            this.halfLifeObject.SetActive(true);
             return;
         }
 
         if (this.vidaAtual == almostlife)
         {
-            this.animacaoDaVida.SetBool("almostlife", true);
+            this.almostLifeObject.SetActive(true);
             return;
         }
 
         if (this.vidaAtual == fulllife)
         {
-            this.animacaoDaVida.SetBool("fulllife", true);
+            this.fullLifeObject.SetActive( true);
             return;
         }
     }
@@ -70,13 +84,6 @@ public class BarraDeVida : MonoBehaviour
 
     public int RemoveVida(int valorParaRemover)
     {
-
-        //this.animacaoDaVida.SetBool("death", false);
-        //this.animacaoDaVida.SetBool("onelife", false);
-        //this.animacaoDaVida.SetBool("halflife", false);
-        //this.animacaoDaVida.SetBool("fulllife", false);
-        //this.animacaoDaVida.SetBool("almostlife", false);
-
         this.vidaAtual -= valorParaRemover;
         if (this.vidaAtual < 0)
         {

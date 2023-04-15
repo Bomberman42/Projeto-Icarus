@@ -8,7 +8,6 @@ public class GameControle : MonoBehaviour
 {
     public Text pontuacaoAtual;
     private int pontuacaoTotal;
-    private int vida;
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
 
