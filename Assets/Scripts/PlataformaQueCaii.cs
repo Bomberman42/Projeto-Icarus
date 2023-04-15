@@ -20,10 +20,21 @@ public class PlataformaQueCaii : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Invoke("Falling", tempoDeQueda);
+            Invoke("QuedaDaPlataforma", tempoDeQueda);
         }
-
-        if(collision.gameObject.layer ==)
     }
 
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if(collider.gameObject.layer == indexLayerFimDeJogo)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void QuedaDaPlataforma()
+    {
+        gatilho.enabled = false;
+        colisaoDaPlataforma.isTrigger = true;
+    }
 }

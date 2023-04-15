@@ -25,6 +25,7 @@ public class Heroi : MonoBehaviour
     public AudioSource audioPulo;
     private bool estaBatendoNaParede;
     public BoxCollider2D colisorDoChao;
+    private int indexLayerFimDeJogo = 8;
 
 
     void Start()

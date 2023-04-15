@@ -15,7 +15,7 @@ public class PlataformaQueAnda : MonoBehaviour
     {
         Debug.Log(this.movimentarPlataforma.connectedAnchor.x);
 
-        if(this.transform.position.x*2 > this.movimentarPlataforma.connectedAnchor.x)
+        if (this.transform.position.x * 2 > this.movimentarPlataforma.connectedAnchor.x)
         {
 
         }
