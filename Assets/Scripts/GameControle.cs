@@ -10,6 +10,7 @@ public class GameControle : MonoBehaviour
     private int pontuacaoTotal;
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
+    public Heroi heroi;
 
     public static GameControle instance;
 
@@ -39,6 +40,7 @@ public class GameControle : MonoBehaviour
     
     public void DanoDoHeroi(int valorDoDanoAoHeroi)
     {
+        this.heroi.SofreuDano();
         Debug.Log("Dano da vida");
         this.barraDeVida.RemoveVida(valorDoDanoAoHeroi);
     }

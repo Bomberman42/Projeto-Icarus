@@ -151,7 +151,6 @@ MonoBehaviour:
   velocidade: 5
   alturaPulo: 9
   audioPulo: {fileID: 1583581557306645007}
-  colisorDoChao: {fileID: 0}
 --- !u!95 &1583581557306645006
 Animator:
   serializedVersion: 5

@@ -5,7 +5,7 @@ using UnityEngine;
 public class BarraDeVida : MonoBehaviour
 {
     private Animator animacaoDaVida;
-    private int valorMaximoDeVida = 4;
+    private int valorMaximoDeVida = 400000;
     private int vidaAtual = 4;
     public GameObject fullLifeObject;
     public GameObject almostLifeObject;
@@ -15,6 +15,7 @@ public class BarraDeVida : MonoBehaviour
 
     void Start()
     {
+        this.vidaAtual = this.valorMaximoDeVida;
         this.animacaoDaVida = GetComponent<Animator>();
         this.fullLifeObject.SetActive(true);
         this.almostLifeObject.SetActive(false);

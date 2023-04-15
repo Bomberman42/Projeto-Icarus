@@ -110,4 +110,16 @@ public class Heroi : MonoBehaviour
         this.animator.SetBool("cair", true);
     }
 
+    public void SofreuDano()
+    {
+        this.animator.SetBool("dano", true);
+        this.fisicaDoHeroi.AddForce(Vector2.up * 20f, ForceMode2D.Impulse);
+        Invoke("ParouDeSofrerDano", 1f);
+    }
+
+    private void ParouDeSofrerDano()
+    {
+        this.animator.SetBool("dano", false);
+    }
+
 }
