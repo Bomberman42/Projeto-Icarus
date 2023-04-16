@@ -59,6 +59,7 @@
     <Compile Include="Assets\Scripts\BlocoDaMorte.cs" />
     <Compile Include="Assets\Scripts\BarraDeVida.cs" />
     <Compile Include="Assets\Scripts\CausaDanoNoHeroi.cs" />
+    <Compile Include="Assets\Scripts\ValidaNivelAtual.cs" />
     <Compile Include="Assets\Scripts\Fruta.cs" />
     <Compile Include="Assets\Scripts\GameControle.cs" />
     <Compile Include="Assets\Scripts\TrapDoFogo.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="Assets\Scripts\Heroi.cs" />
     <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
-    <Compile Include="Assets\Scripts\ValidaNivelAtual.cs" />
+    <Compile Include="Assets\Scripts\VariaveisCompartilhadas\VariaveisCompartilhadas.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
