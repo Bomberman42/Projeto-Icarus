@@ -2,10 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-using System.Threading.Tasks;
-using UnityEditor.VersionControl;
-using Microsoft.Unity.VisualStudio.Editor;
-using System.IO;
 
 public class Heroi : MonoBehaviour
 {
