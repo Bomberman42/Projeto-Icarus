@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BarraDeVida : MonoBehaviour
 {
-    private int valorMaximoDeVida = 4;
+    public int valorMaximoDeVida = 4;
     private int vidaAtual = 4;
     public GameObject fullLifeObject;
     public GameObject almostLifeObject;
@@ -42,23 +42,25 @@ public class BarraDeVida : MonoBehaviour
             return;
         }
 
-        if (this.vidaAtual == (this.valorMaximoDeVida / 2))
+        if (this.vidaAtual == 2)
         {
             this.halfLifeObject.SetActive(true);
             return;
         }
 
-        if (this.vidaAtual == (this.valorMaximoDeVida - 1))
+        if (this.vidaAtual == 3)
         {
             this.almostLifeObject.SetActive(true);
             return;
         }
 
-        if (this.vidaAtual == this.valorMaximoDeVida)
+        if (this.vidaAtual == 4)
         {
-            this.fullLifeObject.SetActive( true);
+            this.fullLifeObject.SetActive(true);
             return;
         }
+
+        this.fullLifeObject.SetActive(true);
     }
 
     public int AdicionaVida(int valorParaAdicionar)

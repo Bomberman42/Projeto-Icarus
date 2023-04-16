@@ -8,16 +8,13 @@ public class PlataformaQueCaii : MonoBehaviour
     private TargetJoint2D gatilho;
     private int indexLayerFimDeJogo = 8;
     private BoxCollider2D colisaoDaPlataforma;
+    public BoxCollider2D removedorDeAtritoDireita;
+    public BoxCollider2D removedorDeAtritoEsquerda;
 
     void Start()
     {
         this.colisaoDaPlataforma = GetComponent<BoxCollider2D>();
         this.gatilho = GetComponent<TargetJoint2D>();
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -32,6 +29,8 @@ public class PlataformaQueCaii : MonoBehaviour
     {
         this.gatilho.enabled = false;
         this.colisaoDaPlataforma.isTrigger = true;
+        this.removedorDeAtritoDireita.isTrigger = true;
+        this.removedorDeAtritoEsquerda.isTrigger = true;
     }
 
     public void ColisaoDetectada(DetectaColisao scriptDoComponenteFilho)

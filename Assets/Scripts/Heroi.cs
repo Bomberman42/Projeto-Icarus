@@ -87,7 +87,7 @@ public class Heroi : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer == this.indexLayerGround)
         {
@@ -117,17 +117,17 @@ public class Heroi : MonoBehaviour
         this.animator.SetBool("cair", true);
     }
 
-    public void SofreuDano()
+    public void SofreuDano(float valorDaForcaParaEmpurrarHeroi)
     {
         this.estaTomandoDando = true;
-        this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? 2f : -2f, this.fisicaDoHeroi.position.y + 6f);
+        this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? valorDaForcaParaEmpurrarHeroi : (valorDaForcaParaEmpurrarHeroi * -1), this.fisicaDoHeroi.position.y + (valorDaForcaParaEmpurrarHeroi * 2));
         this.animator.SetBool("dano", true);
-        Invoke("ParouDeSofrerDano", 0.5f);
+        Invoke("ParouDeSofrerDano", 1f);
     }
 
     private void ParouDeSofrerDano()
     {
-        this.estaTomandoDando = false;
         this.animator.SetBool("dano", false);
+        this.estaTomandoDando = false;
     }
 }

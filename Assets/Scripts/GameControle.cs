@@ -30,6 +30,10 @@ public class GameControle : MonoBehaviour
         this.pontuacaoTotal += pontoFruta;
         this.pontuacaoAtual.text = pontuacaoTotal.ToString();
     }
+    public int RetornaPontuacaoAtual()
+    {
+        return this.pontuacaoTotal;
+    }
 
     public void ResetarCena()
     {
@@ -37,8 +41,13 @@ public class GameControle : MonoBehaviour
         Scene cenaAtual = SceneManager.GetActiveScene();
         SceneManager.LoadScene(cenaAtual.name);
     }
-    
-    public void DanoDoHeroi(int valorDoDanoAoHeroi)
+
+    public void CarregaProximaFase(string nomeDaProximaCena)
+    {
+        SceneManager.LoadScene(nomeDaProximaCena);
+    }
+
+    public void DanoDoHeroi(int valorDoDanoAoHeroi, float valorDaForcaParaEmpurrarHeroi)
     {
         int vidaAtual = this.barraDeVida.RemoveVida(valorDoDanoAoHeroi);
 
@@ -48,6 +57,6 @@ public class GameControle : MonoBehaviour
             return;
         }
 
-        this.heroi.SofreuDano();
+        this.heroi.SofreuDano(valorDaForcaParaEmpurrarHeroi);
     }
 }

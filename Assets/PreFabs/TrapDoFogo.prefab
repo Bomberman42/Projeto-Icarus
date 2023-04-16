@@ -444,3 +444,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valorDoDanoAoHeroi: 1
+  valorDaForcaParaEmpurrarHeroi: 2
