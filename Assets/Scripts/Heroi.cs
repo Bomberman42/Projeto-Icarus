@@ -65,11 +65,11 @@ public class Heroi : MonoBehaviour
     {
         if (Input.GetKeyDown("space"))
         {
-            if(!this.estaPulando)
+            if (!this.estaPulando)
             {
+                this.animator.SetBool("pular", true);
                 this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, this.alturaPulo);
                 this.puloDuplo = true;
-                this.animator.SetBool("pular", true);
                 this.audioPulo.Play();
             }
             else
@@ -79,9 +79,20 @@ public class Heroi : MonoBehaviour
                     this.audioPulo.Stop();
                     this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo));
                     this.audioPulo.Play();
-                    this.puloDuplo = false;   
+                    this.puloDuplo = false;
                 }
             }
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == this.indexLayerGround)
+        {
+            this.tocandoOChao = true;
+            this.estaPulando = false;
+
+            // Deve encerrar a animação de pulo caso o heroi toque no chão.
+            this.animator.SetBool("pular", false);
         }
     }
 
@@ -91,7 +102,6 @@ public class Heroi : MonoBehaviour
         {
             this.tocandoOChao = true;
             this.estaPulando = false;
-            this.animator.SetBool("pular", false);
         }
     }
 
