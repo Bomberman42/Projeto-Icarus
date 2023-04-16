@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmadilhaDeFogo : MonoBehaviour
+public class CausaDanoNoHeroi : MonoBehaviour
 {
     public int valorDoDanoAoHeroi;
 
