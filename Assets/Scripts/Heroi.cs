@@ -130,4 +130,9 @@ public class Heroi : MonoBehaviour
         this.animator.SetBool("dano", false);
         this.estaTomandoDando = false;
     }
+
+    public bool HeroiEstaSofrendoDano()
+    {
+        return this.estaTomandoDando;
+    }
 }

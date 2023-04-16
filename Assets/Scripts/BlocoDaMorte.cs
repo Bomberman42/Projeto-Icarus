@@ -6,11 +6,9 @@ public class BlocoDaMorte : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player")
         {
             GameControle.instance.FimDeJogo();
         }
-
-        Destroy(collision.gameObject);
     }
 }

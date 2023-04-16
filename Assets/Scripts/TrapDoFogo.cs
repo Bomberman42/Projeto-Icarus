@@ -14,7 +14,23 @@ public class TrapDoFogo : MonoBehaviour
 
     void Start()
     {
-        Invoke("DesligarTrap", 2f);
+        if (this.tempoDoFoguinhoOff > 0)
+        {
+            Invoke("DesligarTrap", 0f);
+            return;
+        }
+
+        if (this.tempoDoFoguinhoLigando > 0)
+        {
+            Invoke("AtivarTrap", 0f);
+            return;
+        }
+
+        if (this.tempoDoFoguinhoOn > 0)
+        {
+            Invoke("LigarTrap", 0f);
+            return;
+        }
     }
 
     private void AtivarTrap()
@@ -22,6 +38,12 @@ public class TrapDoFogo : MonoBehaviour
         this.fogoOff.SetActive(false);
         this.fogoAtivando.SetActive(true);
         this.fogoOn.SetActive(false);
+
+        if (this.tempoDoFoguinhoOn == 0)
+        {
+            return;
+        }
+
         Invoke("LigarTrap", this.tempoDoFoguinhoLigando);
     }
 
@@ -30,6 +52,12 @@ public class TrapDoFogo : MonoBehaviour
         this.fogoOn.SetActive(true);
         this.fogoOff.SetActive(false);
         this.fogoAtivando.SetActive(false);
+
+        if (this.tempoDoFoguinhoOff == 0)
+        {
+            return;
+        }
+
         Invoke("DesligarTrap", this.tempoDoFoguinhoOn);
     }
 
@@ -38,6 +66,12 @@ public class TrapDoFogo : MonoBehaviour
         this.fogoOff.SetActive(true);
         this.fogoAtivando.SetActive(false);
         this.fogoOn.SetActive(false);
+
+        if (this.tempoDoFoguinhoLigando == 0)
+        {
+            return;
+        }
+
         Invoke("AtivarTrap", this.tempoDoFoguinhoOff);
     }
 }

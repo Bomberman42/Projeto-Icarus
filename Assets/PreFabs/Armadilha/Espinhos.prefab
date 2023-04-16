@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7790305579551487668}
   - component: {fileID: 3929775405482238677}
   - component: {fileID: 2351611220211149562}
-  m_Layer: 9
+  m_Layer: 6
   m_Name: Espinhos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0031360965, y: -0.018550145}
+  m_Offset: {x: -0.004325941, y: -0.016885057}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.10982208, y: 0.01572103}
+  m_Size: {x: 0.14026907, y: 0.019051202}
   m_EdgeRadius: 0
 --- !u!114 &2351611220211149562
 MonoBehaviour:
@@ -125,4 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valorDoDanoAoHeroi: 1
-  valorDaForcaParaEmpurrarHeroi: 2
+  valorDaForcaParaEmpurrarHeroi: 4
