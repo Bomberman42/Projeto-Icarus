@@ -49,7 +49,7 @@ public class GameControle : MonoBehaviour
 
     public void DanoDoHeroi(int valorDoDanoAoHeroi, float valorDaForcaParaEmpurrarHeroi)
     {
-        if (this.heroi.HeroiEstaSofrendoDano())
+        if (this.heroi.EstaTomandoDando)
         {
             return;
         }

@@ -10,7 +10,9 @@ public class Heroi : MonoBehaviour
     private float velocidade = 7;
     public float alturaPulo;
     private bool tocandoOChao = true;
-    private bool estaTomandoDando;
+
+    // Forma para exportar o valor de uma variável sem que outras classes possam mudar o valor, apenas para ler o valor 
+    public bool EstaTomandoDando { get; private set; }
 
     private bool estaPulando;
     private bool puloDuplo;
@@ -50,7 +52,7 @@ public class Heroi : MonoBehaviour
         this.transform.eulerAngles = direction > 0f ? this.olhandoParaDireita : this.olhandoParaEsquerda;
 
         // Se o heroi esta sofrendo dano, não deve se movimentar por alungs segundos.
-        if (this.estaTomandoDando)
+        if (this.EstaTomandoDando)
         {
             return;
         }
@@ -115,7 +117,7 @@ public class Heroi : MonoBehaviour
 
     public void SofreuDano(float valorDaForcaParaEmpurrarHeroi)
     {
-        this.estaTomandoDando = true;
+        this.EstaTomandoDando = true;
         this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? valorDaForcaParaEmpurrarHeroi : (valorDaForcaParaEmpurrarHeroi * -1), this.fisicaDoHeroi.position.y + (valorDaForcaParaEmpurrarHeroi * 2));
         this.animator.SetBool("dano", true);
         Invoke("ParouDeSofrerDano", 1f);
@@ -124,11 +126,6 @@ public class Heroi : MonoBehaviour
     private void ParouDeSofrerDano()
     {
         this.animator.SetBool("dano", false);
-        this.estaTomandoDando = false;
-    }
-
-    public bool HeroiEstaSofrendoDano()
-    {
-        return this.estaTomandoDando;
+        this.EstaTomandoDando = false;
     }
 }
