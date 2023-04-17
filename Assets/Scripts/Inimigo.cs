@@ -34,7 +34,15 @@ public class Inimigo : MonoBehaviour
     {
         this.fisicaDoInimigo.velocity = new Vector2(this.velocidade, this.fisicaDoInimigo.velocity.y);
         this.colidir = Physics2D.Linecast(this.colisorDaDireita.position, this.colisorDaEsquerda.position, this.camadas);
-        Debug.DrawRay(new Vector2(this.colisorDaDireita.position.x, this.colisorDaDireita.position.y), Vector2.left ,Color.red);
+        Debug.DrawRay(new Vector2(this.colisorDaDireita.position.x, this.colisorDaDireita.position.y), new Vector2(transform.localScale.x > 0 ? 1 : -1, -10), Color.red);
+        Debug.DrawRay(new Vector2(this.colisorDaEsquerda.position.x, this.colisorDaEsquerda.position.y), new Vector2(transform.localScale.x > 0 ? 1 : -1, 1), Color.red);
+
+        if (this.velocidade == 0)
+        {
+            this.animacaoDoInimigo.SetBool("correr", false);
+            return;
+        }
+
         this.animacaoDoInimigo.SetBool("correr", true);
 
         if (colidir)
@@ -50,18 +58,18 @@ public class Inimigo : MonoBehaviour
         {
             float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
 
-            Debug.Log(altura);
-            Debug.Log("posiÁ„o Y do player:");
-            Debug.Log(colisor.gameObject.transform.position.y);
-            Debug.Log("posiÁ„o Y da cabeÁa:");
-            Debug.Log(this.pontoDaCabeca.position.y);
-
             if (altura > 0)
             {
-                Debug.Log("sim");
-                colisor.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse);
+                // Altera a velocidade do inimigo para iniciar a anima√ß√£o de dano.
                 AlteraVelocidade(0);
 
+                // Remove as for√ßas do jogador
+                colisor.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+                // Empurra o jogador para cima como um impulso por atingir um inimigo.
+                colisor.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8, ForceMode2D.Impulse);
+
+                // Remove um ponto de vida do inimigo
                 this.totalDeVida--;
 
                 if (this.totalDeVida > 0)
@@ -73,7 +81,7 @@ public class Inimigo : MonoBehaviour
 
                 this.animacaoDoInimigo.SetTrigger("morte");
                 boxCollider2D.enabled = false;
-                //Isto faz com que o boneco n„o tenha fisica
+                // Isto faz com que o boneco n√£o tenha fisica
                 this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;
                 Destroy(gameObject, 0.33f);
             }
