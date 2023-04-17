@@ -8,6 +8,7 @@ public class Inimigo : MonoBehaviour
     private Rigidbody2D fisicaDoInimigo;
     private Animator animacaoDoInimigo;
     private bool colidir;
+    private float velocidadeDeInicio;
 
     public Transform colisorDaDireita;
     public Transform colisorDaEsquerda;
@@ -17,14 +18,15 @@ public class Inimigo : MonoBehaviour
 
     public int totalDanoPorAtaque;
     public int totalDeVida;
-    public int velocidade;
+    public float velocidade;
 
 
 
     void Start()
     {
         this.fisicaDoInimigo = GetComponent<Rigidbody2D>();
-        this.animacaoDoInimigo = GetComponent <Animator>();
+        this.animacaoDoInimigo = GetComponent<Animator>();
+        this.velocidadeDeInicio = this.velocidade;
     }
 
 
@@ -46,17 +48,45 @@ public class Inimigo : MonoBehaviour
     {
         if (colisor.gameObject.tag == "Player")
         {
-            float altura = colisor.contacts[0].point.y - this.pontoDaCabeca.position.y;
+            float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
+
+            Debug.Log(altura);
+            Debug.Log("posição Y do player:");
+            Debug.Log(colisor.gameObject.transform.position.y);
+            Debug.Log("posição Y da cabeça:");
+            Debug.Log(this.pontoDaCabeca.position.y);
 
             if (altura > 0)
             {
                 Debug.Log("sim");
                 colisor.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 10, ForceMode2D.Impulse);
-                velocidade = 0;
-                this.animacaoDoInimigo.SetTrigger("hit");
-                boxCollider2D.enabled = false;
+                AlteraVelocidade(0);
 
+                this.totalDeVida--;
+
+                if (this.totalDeVida > 0)
+                {
+                    this.animacaoDoInimigo.SetTrigger("dano");
+                    Invoke("ResetaVelocidade", 0.35f);
+                    return;
+                }
+
+                this.animacaoDoInimigo.SetTrigger("morte");
+                boxCollider2D.enabled = false;
+                //Isto faz com que o boneco não tenha fisica
+                this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;
+                Destroy(gameObject, 0.33f);
             }
         }
+    }
+
+    private void AlteraVelocidade(float novoValor)
+    {
+        this.velocidade = novoValor;
+    }
+
+    private void ResetaVelocidade()
+    {
+        this.velocidade = transform.localScale.x >= 0f ? this.velocidadeDeInicio : -this.velocidadeDeInicio;
     }
 }
