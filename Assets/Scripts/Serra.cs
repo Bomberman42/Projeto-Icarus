@@ -13,21 +13,6 @@ public class Serra : MonoBehaviour
     private bool direcaoParaDireita = true;
     private float temporizador;
 
-    private void Movimentar()
-    {
-        if (this.movimentarObjeto.limitState == JointLimitState2D.UpperLimit)
-        {
-            this.motor2D.motorSpeed = this.velocidadeDoMotor * -1;
-        }
-
-        if (this.movimentarObjeto.limitState == JointLimitState2D.LowerLimit)
-        {
-            this.motor2D.motorSpeed = this.velocidadeDoMotor * 1;
-        }
-
-        this.movimentarObjeto.motor = this.motor2D;
-    }
-
     private void Start()
     {
         this.movimentarObjeto = GetComponent<SliderJoint2D>();
@@ -38,6 +23,20 @@ public class Serra : MonoBehaviour
     private void Update()
     {
         Movimentar();
+    }
+    private void Movimentar()
+    {
+        if (this.movimentarObjeto.limitState == JointLimitState2D.UpperLimit)
+        {
+            this.motor2D.motorSpeed = -this.velocidadeDoMotor;
+        }
+
+        if (this.movimentarObjeto.limitState == JointLimitState2D.LowerLimit)
+        {
+            this.motor2D.motorSpeed = this.velocidadeDoMotor;
+        }
+
+        this.movimentarObjeto.motor = this.motor2D;
     }
 
     private void MovimentaSerraManualmente()
