@@ -11,12 +11,23 @@ public class GameControle : MonoBehaviour
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
     public Heroi heroi;
+    public GameObject menuEsc;
 
     public static GameControle instance;
 
     void Start()
     {
       instance = this;
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Cancel"))
+        {
+            this.menuEsc.SetActive(true);
+        }
+
+        while (Input.GetButtonDown("Cancel") == true) { this.menuEsc.SetActive(false); }
     }
 
     public void FimDeJogo()
@@ -63,5 +74,11 @@ public class GameControle : MonoBehaviour
         }
 
         this.heroi.SofreuDano(valorDaForcaParaEmpurrarHeroi);
+    }
+
+    public void SairDoJogo()
+    {
+        Debug.Log("Ação de sair do jogo");
+        Application.Quit();
     }
 }
