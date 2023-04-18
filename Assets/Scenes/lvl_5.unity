@@ -712,9 +712,21 @@ PrefabInstance:
       propertyPath: heroi
       value: 
       objectReference: {fileID: 1723459885}
+    - target: {fileID: 2968998564192867422, guid: 23db713b433025845853287a29967ef6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5012136437385996749, guid: 23db713b433025845853287a29967ef6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DespausarGame
+      objectReference: {fileID: 0}
     - target: {fileID: 6253261281877457450, guid: 23db713b433025845853287a29967ef6, type: 3}
       propertyPath: m_Name
       value: LevelControler
+      objectReference: {fileID: 0}
+    - target: {fileID: 6600474435887135049, guid: 23db713b433025845853287a29967ef6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8935078736533508554, guid: 23db713b433025845853287a29967ef6, type: 3}
       propertyPath: m_RootOrder

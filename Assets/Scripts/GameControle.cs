@@ -12,6 +12,7 @@ public class GameControle : MonoBehaviour
     public BarraDeVida barraDeVida;
     public Heroi heroi;
     public GameObject menuEsc;
+    public bool estaPausado;
 
     public static GameControle instance;
 
@@ -24,9 +25,28 @@ public class GameControle : MonoBehaviour
     {
         if (Input.GetButtonDown("Cancel"))
         {
-            this.menuEsc.SetActive(true);
-            return;
+            if(this.estaPausado)
+            {
+                DespausarGame();
+            } else 
+            { 
+                PausarGame();
+            }
         }
+    }
+
+    public void PausarGame()
+    {
+        Time.timeScale = 0;
+        this.menuEsc.SetActive(true);
+        this.estaPausado = true;
+    }
+
+    public void DespausarGame()
+    {
+        Time.timeScale = 1;
+        this.menuEsc.SetActive(false);
+        this.estaPausado = false;
     }
 
     public void FimDeJogo()
@@ -79,5 +99,11 @@ public class GameControle : MonoBehaviour
     {
         Debug.Log("Ação de sair do jogo");
         Application.Quit();
+    }
+
+    public void IrParaOMenuPrincipal()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("0_Menu");
     }
 }

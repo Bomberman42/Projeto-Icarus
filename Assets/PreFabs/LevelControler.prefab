@@ -1243,6 +1243,8 @@ MonoBehaviour:
   fimDeJogo: {fileID: 2968998565409893746}
   barraDeVida: {fileID: 1317418815}
   heroi: {fileID: 0}
+  menuEsc: {fileID: 6600474435887135049}
+  estaPausado: 0
 --- !u!1 &2968998564439369189
 GameObject:
   m_ObjectHideFlags: 0
@@ -1752,9 +1754,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2968998564192867422}
+      - m_Target: {fileID: 2968998564192867409}
         m_TargetAssemblyTypeName: GameControle, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: ResumirGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2066,7 +2068,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1732728336255745607
 Transform:
   m_ObjectHideFlags: 0
@@ -2462,9 +2464,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2968998564192867409}
         m_TargetAssemblyTypeName: GameControle, Assembly-CSharp
-        m_MethodName: ResetarCena
+        m_MethodName: IrParaOMenuPrincipal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
