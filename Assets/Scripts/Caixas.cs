@@ -9,15 +9,29 @@ public class Caixas : MonoBehaviour
     public int vidaDaCaixa;
     public Animator animacaoDaCaixa;
     public GameObject coletada;
+    public float tempoDeMorte;
+    public GameObject loot;
+    public int quantidadeDeLoot = 1;
+    private bool destruindoObjeto;
 
     void Update()
     {
-        if (this.vidaDaCaixa <= 0)
+        if (this.vidaDaCaixa <= 0 && !this.destruindoObjeto)
         {
+            this.destruindoObjeto = true;
             this.coletada.SetActive(true);
             transform.parent.gameObject.GetComponent<SpriteRenderer>().enabled = false;
             transform.parent.gameObject.GetComponent<BoxCollider2D>().enabled = false;
-            Destroy(transform.parent.gameObject, 0.40f);
+
+            if(this.loot != null)
+            {
+                for(int index = 0; index < quantidadeDeLoot; index++)
+                {
+                    Instantiate(this.loot, new Vector3(Random.Range(transform.parent.position.x +0.5f, transform.parent.position.x -0.5f), Random.Range(transform.parent.position.y +0.5f, transform.parent.position.y -0.5f)), transform.parent.rotation);
+                }
+            }
+
+            Destroy(transform.parent.gameObject, this.tempoDeMorte);
         }
     }
 

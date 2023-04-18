@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\Caixas.cs" />
+    <Compile Include="Assets\Scripts\CaixaDeFerro.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
