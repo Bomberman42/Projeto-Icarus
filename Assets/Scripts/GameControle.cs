@@ -25,9 +25,8 @@ public class GameControle : MonoBehaviour
         if (Input.GetButtonDown("Cancel"))
         {
             this.menuEsc.SetActive(true);
+            return;
         }
-
-        while (Input.GetButtonDown("Cancel") == true) { this.menuEsc.SetActive(false); }
     }
 
     public void FimDeJogo()
