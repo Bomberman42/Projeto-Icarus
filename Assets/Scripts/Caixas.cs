@@ -27,7 +27,7 @@ public class Caixas : MonoBehaviour
             {
                 for(int index = 0; index < quantidadeDeLoot; index++)
                 {
-                    Instantiate(this.loot, new Vector3(Random.Range(transform.parent.position.x +0.5f, transform.parent.position.x -0.5f), Random.Range(transform.parent.position.y +0.5f, transform.parent.position.y -0.5f)), transform.parent.rotation);
+                    Instantiate(this.loot, new Vector3(Random.Range(transform.parent.position.x +0.3f, transform.parent.position.x -0.3f), Random.Range(transform.parent.position.y +0.3f, transform.parent.position.y -0.3f)), transform.parent.rotation);
                 }
             }
 
