@@ -14,9 +14,11 @@ public class Heroi : MonoBehaviour
     // Forma para exportar o valor de uma variável sem que outras classes possam mudar o valor, apenas para ler o valor 
     public bool EstaTomandoDando { get; private set; }
 
+    private bool bloqueiaPulo;
     private bool estaPulando;
     private bool puloDuplo;
     private int indexLayerGround = 6;
+    private int indexLayerVentilador = 11;
     private Animator animator;
     private Vector3 olhandoParaDireita = new Vector3(0f, 0f, 0f);
     private Vector3 olhandoParaEsquerda = new Vector3(0f, 180f, 0f);
@@ -63,6 +65,12 @@ public class Heroi : MonoBehaviour
 
     private void Pular()
     {
+
+        if (this.bloqueiaPulo == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown("space"))
         {
             if (!this.estaPulando)
@@ -137,5 +145,22 @@ public class Heroi : MonoBehaviour
     {
         this.animator.SetBool("dano", false);
         this.EstaTomandoDando = false;
+    }
+
+    private void OnTriggerStay2D(Collider2D collider)
+    {
+        if(collider.gameObject.layer == this.indexLayerVentilador)
+        {
+            this.bloqueiaPulo = true;
+            this.puloDuplo = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.layer == this.indexLayerVentilador)
+        {
+            this.bloqueiaPulo = false;
+        }
     }
 }

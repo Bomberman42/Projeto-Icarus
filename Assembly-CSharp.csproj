@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\Heroi.cs" />
     <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
+    <Compile Include="Assets\Scripts\Ventilador.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
