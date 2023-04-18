@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
+    <Compile Include="Assets\Scripts\Caixas.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
