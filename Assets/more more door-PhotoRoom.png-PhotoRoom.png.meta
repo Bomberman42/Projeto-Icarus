@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: b94252358f0904c439ef2f7d360ac995
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_0
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 426
+        width: 251
+        height: 270
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77d7521b2e3bb224fb24ad56d86a33c6
+      internalID: 1249479919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_1
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 580
+        width: 104
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80e6ddd53b71c94f9732a891a2fe930
+      internalID: 1679797369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_2
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 580
+        width: 104
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827315e24ed53264eb76946b5a0cbd2e
+      internalID: 1157629183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_3
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 580
+        width: 105
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 933c655386a9d1d47a9c996d31178a19
+      internalID: 1313806629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_4
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 580
+        width: 105
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf8ea4c2efdd68429d4889d3428376e
+      internalID: -1375555627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_5
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 426
+        width: 103
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e60140e431b5c4c8c97def43d96c40
+      internalID: -1325816510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_6
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 426
+        width: 100
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4552e261898c84cb1b0cbc6cf23e96
+      internalID: 626533286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_7
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 426
+        width: 105
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba6d5619a4832f48a2886083b3a4859
+      internalID: -1853926195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_8
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 426
+        width: 105
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 997afa34ea97add4bbeb6cd8907ebd37
+      internalID: -1764510515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_9
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 272
+        width: 105
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e378f2dd32e5c47b8d5b3f8fec5308
+      internalID: 1185271804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_10
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 273
+        width: 104
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67cdd4f7bd19cbe4c8a46092f31e7fea
+      internalID: 224551094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_11
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 273
+        width: 105
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cce5b81d4a578247a7f9675ca7c8262
+      internalID: -1673019366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_12
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 273
+        width: 105
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39801dc4203cd8845b573a9329065f53
+      internalID: 1147922406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_13
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 273
+        width: 105
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b2d87c04031bba43a23acdf57006345
+      internalID: 1252835669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_14
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 273
+        width: 105
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b444853e6355bf49850084d29873216
+      internalID: 1833510361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_15
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 273
+        width: 104
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03d9372b0a493d6458f10d963dc0966d
+      internalID: -131094974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_16
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 273
+        width: 106
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b625b285009af04399851f810c0b365
+      internalID: -1895913839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_17
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 119
+        width: 93
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9ad491e3d4b7af4097149c0049bf48b
+      internalID: -1633940473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_18
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 119
+        width: 93
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258b7cd870e403745a36b05c1f3f7ff3
+      internalID: 760745869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_19
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 119
+        width: 93
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598e3f31c9c9f524aa1ef02bd2658716
+      internalID: 1455456906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_20
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 119
+        width: 94
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dd27cf9ebcb2c5488b09a34bbabacdd
+      internalID: 134936307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_21
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 118
+        width: 104
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af5962126b099b4bb095fd70702974c
+      internalID: 684873905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_22
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 119
+        width: 103
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c12139e4eb0f3a4b9b46e5790f3bc81
+      internalID: 1255185068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_23
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 119
+        width: 94
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a780677062ab7ca4bb9b3706c12ce723
+      internalID: 910292271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: more more door-PhotoRoom.png-PhotoRoom_24
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 119
+        width: 99
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83584f213448bad4fa17bd7c2132c92d
+      internalID: 1978118434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      more more door-PhotoRoom.png-PhotoRoom_0: 1249479919
+      more more door-PhotoRoom.png-PhotoRoom_1: 1679797369
+      more more door-PhotoRoom.png-PhotoRoom_10: 224551094
+      more more door-PhotoRoom.png-PhotoRoom_11: -1673019366
+      more more door-PhotoRoom.png-PhotoRoom_12: 1147922406
+      more more door-PhotoRoom.png-PhotoRoom_13: 1252835669
+      more more door-PhotoRoom.png-PhotoRoom_14: 1833510361
+      more more door-PhotoRoom.png-PhotoRoom_15: -131094974
+      more more door-PhotoRoom.png-PhotoRoom_16: -1895913839
+      more more door-PhotoRoom.png-PhotoRoom_17: -1633940473
+      more more door-PhotoRoom.png-PhotoRoom_18: 760745869
+      more more door-PhotoRoom.png-PhotoRoom_19: 1455456906
+      more more door-PhotoRoom.png-PhotoRoom_2: 1157629183
+      more more door-PhotoRoom.png-PhotoRoom_20: 134936307
+      more more door-PhotoRoom.png-PhotoRoom_21: 684873905
+      more more door-PhotoRoom.png-PhotoRoom_22: 1255185068
+      more more door-PhotoRoom.png-PhotoRoom_23: 910292271
+      more more door-PhotoRoom.png-PhotoRoom_24: 1978118434
+      more more door-PhotoRoom.png-PhotoRoom_3: 1313806629
+      more more door-PhotoRoom.png-PhotoRoom_4: -1375555627
+      more more door-PhotoRoom.png-PhotoRoom_5: -1325816510
+      more more door-PhotoRoom.png-PhotoRoom_6: 626533286
+      more more door-PhotoRoom.png-PhotoRoom_7: -1853926195
+      more more door-PhotoRoom.png-PhotoRoom_8: -1764510515
+      more more door-PhotoRoom.png-PhotoRoom_9: 1185271804
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
