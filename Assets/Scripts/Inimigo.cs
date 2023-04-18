@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class Inimigo : MonoBehaviour
 {
-
     private Rigidbody2D fisicaDoInimigo;
     private Animator animacaoDoInimigo;
     private bool colidir;
     private float velocidadeDeInicio;
 
+    [Header("Atributos do Ininmigo")]
     public Transform colisorDaDireita;
     public Transform colisorDaEsquerda;
-    public LayerMask camadas;
     public Transform pontoDaCabeca;
     public BoxCollider2D boxCollider2D;
+    public LayerMask camadas;
 
-    public int totalDanoPorAtaque;
+    [Header("Status do Ininmigo")]
+    public int totalDanoRecebidoPorAtaque;
     public int totalDeVida;
     public float velocidade;
+    public int totalDanoPorAtaque;
+    public float valorDaForcaParaEmpurrarHeroi;
 
 
 
@@ -56,7 +59,8 @@ public class Inimigo : MonoBehaviour
     {
         if (colisor.gameObject.tag == "Player")
         {
-            float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
+            //float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
+            float altura = colisor.contacts[0].point.y - this.pontoDaCabeca.position.y;
 
             if (altura > 0)
             {
@@ -70,7 +74,7 @@ public class Inimigo : MonoBehaviour
                 colisor.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8, ForceMode2D.Impulse);
 
                 // Remove um ponto de vida do inimigo
-                this.totalDeVida--;
+                this.totalDeVida -= this.totalDanoRecebidoPorAtaque;
 
                 if (this.totalDeVida > 0)
                 {
@@ -84,6 +88,9 @@ public class Inimigo : MonoBehaviour
                 // Isto faz com que o boneco não tenha fisica
                 this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;
                 Destroy(gameObject, 0.33f);
+            } else
+            {
+                causarDano();
             }
         }
     }
@@ -96,5 +103,10 @@ public class Inimigo : MonoBehaviour
     private void ResetaVelocidade()
     {
         this.velocidade = transform.localScale.x >= 0f ? this.velocidadeDeInicio : -this.velocidadeDeInicio;
+    }
+
+    private void causarDano()
+    {
+        GameControle.instance.DanoDoHeroi(this.totalDanoPorAtaque, this.valorDaForcaParaEmpurrarHeroi);
     }
 }

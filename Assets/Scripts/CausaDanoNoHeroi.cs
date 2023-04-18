@@ -11,7 +11,7 @@ public class CausaDanoNoHeroi : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameControle.instance.DanoDoHeroi(valorDoDanoAoHeroi, valorDaForcaParaEmpurrarHeroi);
+            GameControle.instance.DanoDoHeroi(this.valorDoDanoAoHeroi, this.valorDaForcaParaEmpurrarHeroi);
         }
     }
 }
