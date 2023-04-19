@@ -1756,7 +1756,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2968998564192867409}
         m_TargetAssemblyTypeName: GameControle, Assembly-CSharp
-        m_MethodName: ResumirGame
+        m_MethodName: DespausarGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

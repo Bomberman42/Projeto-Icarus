@@ -72,9 +72,9 @@
     <Compile Include="Assets\Scripts\Inimigo.cs" />
     <Compile Include="Assets\Scripts\Heroi.cs" />
     <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
+    <Compile Include="Assets\Scripts\Portas.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
-    <Compile Include="Assets\Scripts\Portas.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
