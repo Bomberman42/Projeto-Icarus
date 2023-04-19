@@ -6,13 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class GameControle : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource musica;
     public Text pontuacaoAtual;
     private int pontuacaoTotal;
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
     public Heroi heroi;
     public GameObject menuEsc;
-    public bool estaPausado;
+    public GameObject menuDeOpcoes;
+    public GameObject menuPrincipal;
+    public  bool estaPausado;
+    private bool menuDeOpcoesAberto;
 
     public static GameControle instance;
 
@@ -23,13 +28,18 @@ public class GameControle : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Cancel"))
+        if (Input.GetKeyDown("escape"))
         {
-            if(this.estaPausado)
+            if(estaPausado)
             {
+                if (this.menuDeOpcoesAberto)
+                {
+                    FecharOpcoes();
+                    return;
+                }
                 DespausarGame();
             } else 
-            { 
+            {
                 PausarGame();
             }
         }
@@ -39,14 +49,14 @@ public class GameControle : MonoBehaviour
     {
         Time.timeScale = 0;
         this.menuEsc.SetActive(true);
-        this.estaPausado = true;
+        estaPausado = true;
     }
 
     public void DespausarGame()
     {
         Time.timeScale = 1;
         this.menuEsc.SetActive(false);
-        this.estaPausado = false;
+        estaPausado = false;
     }
 
     public void FimDeJogo()
@@ -95,6 +105,22 @@ public class GameControle : MonoBehaviour
         this.heroi.SofreuDano(valorDaForcaParaEmpurrarHeroi);
     }
 
+    public void AbrirOpcoes()
+    {
+        this.menuEsc.SetActive(false);
+        this.menuPrincipal.SetActive(false);
+        this.menuDeOpcoesAberto = true;
+        this.menuDeOpcoes.SetActive(true);
+    }
+
+    public void FecharOpcoes()
+    {
+        this.menuEsc.SetActive(true);
+        this.menuPrincipal.SetActive(true);
+        this.menuDeOpcoesAberto = false;
+        this.menuDeOpcoes.SetActive(false);
+    }
+
     public void SairDoJogo()
     {
         Debug.Log("Ação de sair do jogo");
@@ -106,4 +132,10 @@ public class GameControle : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("0_Menu");
     }
+
+    public void VolumeDaMusica(float mixer)
+    {
+        this.musica.volume = mixer;
+    }
+
 }

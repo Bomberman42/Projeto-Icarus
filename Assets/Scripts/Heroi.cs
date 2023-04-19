@@ -36,6 +36,11 @@ public class Heroi : MonoBehaviour
 
     void Update()
     {
+        if (GameControle.instance.estaPausado)
+        {
+            return;
+        }
+
         Movimentar();
         Pular();
         Cair();
