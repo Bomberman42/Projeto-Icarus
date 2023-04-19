@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Portas.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
+    <Compile Include="Assets\Scripts\MenuInicial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

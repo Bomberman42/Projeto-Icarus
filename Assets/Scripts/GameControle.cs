@@ -8,6 +8,8 @@ public class GameControle : MonoBehaviour
 {
     [SerializeField]
     private AudioSource musica;
+    [SerializeField]
+    private Slider sliderMusicaJogo;
     public Text pontuacaoAtual;
     private int pontuacaoTotal;
     public GameObject fimDeJogo;
@@ -23,13 +25,25 @@ public class GameControle : MonoBehaviour
 
     void Start()
     {
-      instance = this;
+        this.sliderMusicaJogo.value = this.musica.volume;
+        instance = this;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown("escape"))
         {
+            if(this.menuPrincipal != null)
+            {
+                if (this.menuDeOpcoesAberto)
+                {
+                    FecharOpcoes();
+                    return;
+                }
+
+                return;
+            }
+
             if(estaPausado)
             {
                 if (this.menuDeOpcoesAberto)
@@ -108,7 +122,6 @@ public class GameControle : MonoBehaviour
     public void AbrirOpcoes()
     {
         this.menuEsc.SetActive(false);
-        this.menuPrincipal.SetActive(false);
         this.menuDeOpcoesAberto = true;
         this.menuDeOpcoes.SetActive(true);
     }
@@ -116,7 +129,6 @@ public class GameControle : MonoBehaviour
     public void FecharOpcoes()
     {
         this.menuEsc.SetActive(true);
-        this.menuPrincipal.SetActive(true);
         this.menuDeOpcoesAberto = false;
         this.menuDeOpcoes.SetActive(false);
     }
