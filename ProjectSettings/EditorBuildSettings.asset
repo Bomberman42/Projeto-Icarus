@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lvl_5.unity
     guid: 7a9ea6dc1430fec4fa9741bea26fe66f
+  - enabled: 1
+    path: Assets/Scenes/0_TelaDeFases.unity
+    guid: 343976350c79d644b994f19218895aae
   m_configObjects: {}

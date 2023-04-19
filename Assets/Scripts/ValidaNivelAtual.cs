@@ -17,7 +17,7 @@ public class ValidaNivelAtual : MonoBehaviour
 
         if (pontuacaoAtual == valorMaximoDeFrutas)
         {
-            GameControle.instance.CarregaProximaFase(nomeDaProximaCena);
+            GameControle.instance.CarregaProximaFase("0_TelaDeFases");
         }
     }
 }
