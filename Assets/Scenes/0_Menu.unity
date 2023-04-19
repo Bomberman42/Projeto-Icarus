@@ -1496,6 +1496,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicaDoNaruto: {fileID: 1554885764}
   musicaDoJogo: {fileID: 1503670148}
+  canvasDoFadeOut: {fileID: 869026258}
   grupoDoCanvas: {fileID: 869026260}
   tempoDeTransicao: 3
 --- !u!1 &1573846806

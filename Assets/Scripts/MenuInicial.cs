@@ -9,6 +9,8 @@ public class MenuInicial : MonoBehaviour
     private AudioSource musicaDoNaruto;
     [SerializeField]
     private AudioSource musicaDoJogo;
+    [SerializeField]
+    private GameObject canvasDoFadeOut;
     public CanvasGroup grupoDoCanvas;
     public float tempoDeTransicao;
 
@@ -23,6 +25,7 @@ public class MenuInicial : MonoBehaviour
     private void ExecutaTransicao()
     {
         StartCoroutine(TransicaoDeCena(1f, 0f, "FadeOut"));
+        Destroy(canvasDoFadeOut, tempoDeTransicao + 1);
     }
 
     private IEnumerator TransicaoDeCena(float tempoInicio, float tempoFinal, string transicao)
