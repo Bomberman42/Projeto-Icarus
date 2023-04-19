@@ -381,7 +381,7 @@ MonoBehaviour:
   player: {fileID: 510400566}
   somPortaTrancada: {fileID: 131389499}
   somPortaAbrindo: {fileID: 131389498}
-  trancaDaPorta: 1
+  trancaDaPorta: 0
 --- !u!212 &131389503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -441,13 +441,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 131389497}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.03, y: 1.04, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.061485, y: -16.373554, z: 0.52711034}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1822136131}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &131389505
 Animator:
@@ -4738,7 +4738,7 @@ MonoBehaviour:
   player: {fileID: 510400566}
   somPortaTrancada: {fileID: 1564812454}
   somPortaAbrindo: {fileID: 1564812453}
-  trancaDaPorta: 1
+  trancaDaPorta: 0
 --- !u!212 &1564812458
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4798,13 +4798,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564812452}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.97, y: 1.03, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.061485, y: -16.383554, z: 0.52711034}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1822136131}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1564812460
 Animator:
@@ -4838,6 +4838,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24c85b2c49fa82741b053944011cefa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1822136130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1822136131}
+  m_Layer: 0
+  m_Name: Portas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1822136131
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822136130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 14.091485, y: 17.413555, z: -0.52711034}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2126239231}
+  - {fileID: 1564812459}
+  - {fileID: 1947070065}
+  - {fileID: 2040404013}
+  - {fileID: 131389504}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1835428082
 GameObject:
   m_ObjectHideFlags: 0
@@ -15232,7 +15268,7 @@ MonoBehaviour:
   player: {fileID: 510400566}
   somPortaTrancada: {fileID: 1947070060}
   somPortaAbrindo: {fileID: 1947070059}
-  trancaDaPorta: 1
+  trancaDaPorta: 0
 --- !u!212 &1947070064
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15292,13 +15328,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1947070058}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.02, y: 2.54, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -14.071485, y: -14.873555, z: 0.52711034}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1822136131}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1947070066
 Animator:
@@ -15402,13 +15438,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040404011}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.007, y: 2.06, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.098484, y: -15.353556, z: 0.52711034}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1822136131}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2040404014
 MonoBehaviour:
@@ -15428,7 +15464,7 @@ MonoBehaviour:
   player: {fileID: 510400566}
   somPortaTrancada: {fileID: 2040404017}
   somPortaAbrindo: {fileID: 2040404018}
-  trancaDaPorta: 1
+  trancaDaPorta: 0
 --- !u!61 &2040404015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15986,13 +16022,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126239224}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.01, y: 2.02, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.081485, y: -15.393555, z: 0.52711034}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1822136131}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2126239232
 Animator:
