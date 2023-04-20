@@ -59,11 +59,12 @@
     <Compile Include="Assets\Scripts\Serra.cs" />
     <Compile Include="Assets\Scripts\BlocoDaMorte.cs" />
     <Compile Include="Assets\Scripts\BarraDeVida.cs" />
+    <Compile Include="Assets\Scripts\MenuInicial.cs" />
     <Compile Include="Assets\Scripts\CaixaDeFerro.cs" />
     <Compile Include="Assets\Scripts\VariaveisCompartilhadas\VariaveisCompartilhadas.cs" />
     <Compile Include="Assets\Scripts\CausaDanoNoHeroi.cs" />
     <Compile Include="Assets\Scripts\ValidaNivelAtual.cs" />
-    <Compile Include="Assets\Scripts\Fruta.cs" />
+    <Compile Include="Assets\Scripts\ItensColetaveis.cs" />
     <Compile Include="Assets\Scripts\Trampolim.cs" />
     <Compile Include="Assets\Scripts\GameControle.cs" />
     <Compile Include="Assets\Scripts\TrapDoFogo.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Assets\Scripts\Portas.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
-    <Compile Include="Assets\Scripts\MenuInicial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

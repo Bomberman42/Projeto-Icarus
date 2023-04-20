@@ -14106,6 +14106,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1583581557306645004, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645008, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_Name
       value: Heroi
@@ -14116,7 +14120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645010, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.627
+      value: -1.918
       objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645010, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14277,18 +14281,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6562315292612619905, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
-      propertyPath: m_Size.y
-      value: 0.199
-      objectReference: {fileID: 0}
-    - target: {fileID: 6562315292612619905, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 6200000, guid: 8afafb4be34cfd4469f20e07f7462b32, type: 2}
-    - target: {fileID: 6562315292612619905, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
-      propertyPath: m_EdgeRadius
-      value: 0.03
-      objectReference: {fileID: 0}
     - target: {fileID: 7180618841365090630, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
       propertyPath: m_Name
       value: CaixaDeFerro
@@ -14303,7 +14295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7180618841365090681, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.06
+      value: -3.08
       objectReference: {fileID: 0}
     - target: {fileID: 7180618841365090681, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14336,10 +14328,6 @@ PrefabInstance:
     - target: {fileID: 7180618841365090681, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7180618841365090682, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
-      propertyPath: m_Mass
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5d0fe2842b278a42bd854d0f2e7b4ee, type: 3}
