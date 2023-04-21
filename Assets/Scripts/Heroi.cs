@@ -23,6 +23,7 @@ public class Heroi : MonoBehaviour
     private Vector3 olhandoParaDireita = new Vector3(0f, 0f, 0f);
     private Vector3 olhandoParaEsquerda = new Vector3(0f, 180f, 0f);
     public AudioSource audioPulo;
+    public int playerLife = 4;
 
     void Start()
     {

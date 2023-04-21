@@ -11,14 +11,17 @@ public class GameControle : MonoBehaviour
     [SerializeField]
     private Slider sliderMusicaJogo;
     public Text pontuacaoAtual;
-    private int pontuacaoTotal;
+    [SerializeField]
+    private Text totalPointsAcquired;
+    public int pontuacaoTotal;
+    private int playerTotalPoints;
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
     public Heroi heroi;
     public GameObject menuEsc;
     public GameObject menuDeOpcoes;
     public GameObject menuPrincipal;
-    public  bool estaPausado;
+    public bool estaPausado;
     private bool menuDeOpcoesAberto;
 
     public static GameControle instance;
@@ -27,13 +30,14 @@ public class GameControle : MonoBehaviour
     {
         this.sliderMusicaJogo.value = this.musica.volume;
         instance = this;
+        LoadGame();
     }
 
     private void Update()
     {
         if (Input.GetKeyDown("escape"))
         {
-            if(this.menuPrincipal != null)
+            if (this.menuPrincipal != null)
             {
                 if (this.menuDeOpcoesAberto)
                 {
@@ -44,7 +48,7 @@ public class GameControle : MonoBehaviour
                 return;
             }
 
-            if(estaPausado)
+            if (estaPausado)
             {
                 if (this.menuDeOpcoesAberto)
                 {
@@ -52,7 +56,7 @@ public class GameControle : MonoBehaviour
                     return;
                 }
                 DespausarGame();
-            } else 
+            } else
             {
                 PausarGame();
             }
@@ -84,9 +88,17 @@ public class GameControle : MonoBehaviour
         this.pontuacaoTotal += pontoFruta;
         this.pontuacaoAtual.text = pontuacaoTotal.ToString();
     }
+
     public int RetornaPontuacaoAtual()
     {
         return this.pontuacaoTotal;
+    }
+
+    public void ContinueGame()
+    {
+        LoadGame();
+        Time.timeScale = 1;
+        SceneManager.LoadScene("0_TelaDeFases");
     }
 
     public void ResetarCena()
@@ -135,7 +147,7 @@ public class GameControle : MonoBehaviour
 
     public void SairDoJogo()
     {
-        Debug.Log("Ação de sair do jogo");
+        SaveGame();
         Application.Quit();
     }
 
@@ -150,4 +162,47 @@ public class GameControle : MonoBehaviour
         this.musica.volume = mixer;
     }
 
+    public void SaveGame()
+    {
+        SaveSystem.SaveGame(this);
+    }
+
+    private void LoadGame()
+    {
+        Debug.Log("Entrou aqui1");
+        GameData data = SaveSystem.LoadGame();
+
+        if (data == null) {
+            return;
+        }
+
+        this.playerTotalPoints = data.playerTotalPoints;
+
+        if (this.playerTotalPoints >= 0 && this.totalPointsAcquired != null)
+        {
+            this.totalPointsAcquired.text = this.playerTotalPoints.ToString();
+        }
+    }
+
+    public void UpdateTotalScore()
+    {
+        this.playerTotalPoints += this.pontuacaoTotal;
+
+        if (this.playerTotalPoints >= 0 && this.totalPointsAcquired != null)
+        {
+            this.totalPointsAcquired.text = this.playerTotalPoints.ToString();
+        }
+    }
+
+    public int GetPlayerTotalPoints()
+    {
+        return this.playerTotalPoints;
+    }
+
+    public void FinishedStage() {
+        UpdateTotalScore();
+        SaveGame();
+        this.pontuacaoTotal = 0;
+        CarregaProximaFase("0_TelaDeFases");
+    }
 }

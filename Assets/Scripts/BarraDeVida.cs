@@ -5,7 +5,7 @@ using UnityEngine;
 public class BarraDeVida : MonoBehaviour
 {
     public int valorMaximoDeVida = 4;
-    private int vidaAtual = 4;
+    public int vidaAtual = 4;
     public GameObject fullLifeObject;
     public GameObject almostLifeObject;
     public GameObject halfLifeObject;

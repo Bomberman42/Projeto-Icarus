@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5475756376671486552, guid: a097920d03e37bf4d8a5b8dd0bca6c54, type: 3}
+      propertyPath: valorDoIten
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5475756376671486555, guid: a097920d03e37bf4d8a5b8dd0bca6c54, type: 3}
       propertyPath: m_Name
       value: FrutaLaranja (5)
@@ -468,11 +472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5475756376671486564, guid: a097920d03e37bf4d8a5b8dd0bca6c54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.7
+      value: -1.67
       objectReference: {fileID: 0}
     - target: {fileID: 5475756376671486564, guid: a097920d03e37bf4d8a5b8dd0bca6c54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.37
+      value: -0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5475756376671486564, guid: a097920d03e37bf4d8a5b8dd0bca6c54, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4402,7 +4406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7aeb47501fb2e704e86b389657888024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  valorMaximoDeFrutas: 89
+  valorMaximoDeFrutas: 5
   nomeDaProximaCena: lvl_3
 --- !u!4 &1758574024
 Transform:

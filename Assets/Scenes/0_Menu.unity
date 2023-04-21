@@ -766,7 +766,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 67918144}
         m_TargetAssemblyTypeName: GameControle, Assembly-CSharp
-        m_MethodName: ResetarCena
+        m_MethodName: ContinueGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1889,9 +1889,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1554885763}
     m_Modifications:
+    - target: {fileID: 6150246916361184130, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150246916361184130, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150246916361184130, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6150246916489142940, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
       propertyPath: m_Name
       value: "MenuDeOp\xE7\xF5es"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150246916489142940, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6150246916489142941, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
       propertyPath: m_Pivot.x
@@ -1981,6 +1997,14 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 67918144}
+    - target: {fileID: 6150246917378098821, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6150246917378098821, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6150246917600403116, guid: e41ca9a7fb761054691bd9447bba00b8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
