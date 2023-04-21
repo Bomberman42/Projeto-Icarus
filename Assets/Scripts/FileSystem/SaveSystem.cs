@@ -38,4 +38,17 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void DeleteGame()
+    {
+        GameControle gameControler = new GameControle();
+        BinaryFormatter formatter = new BinaryFormatter();
+        string filePath = Application.persistentDataPath + fileName;
+        FileStream stream = new FileStream(filePath, FileMode.Create);
+
+        GameData data = new GameData(gameControler);
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
 }

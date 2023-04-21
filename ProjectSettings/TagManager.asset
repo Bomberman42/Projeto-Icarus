@@ -15,6 +15,7 @@ TagManager:
   - FrutaMorango
   - PlataformaFlutuante
   - Moeda
+  - MusicSound
   layers:
   - Default
   - TransparentFX

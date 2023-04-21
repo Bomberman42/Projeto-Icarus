@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class GameControle : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource musica;
-    [SerializeField]
-    private Slider sliderMusicaJogo;
     public Text pontuacaoAtual;
     [SerializeField]
     private Text totalPointsAcquired;
@@ -28,7 +24,6 @@ public class GameControle : MonoBehaviour
 
     void Start()
     {
-        this.sliderMusicaJogo.value = this.musica.volume;
         instance = this;
         LoadGame();
     }
@@ -37,25 +32,23 @@ public class GameControle : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            if (this.menuPrincipal != null)
-            {
-                if (this.menuDeOpcoesAberto)
-                {
-                    FecharOpcoes();
-                    return;
-                }
+            //if (this.menuPrincipal != null)
+            //{
+            //    if (this.menuDeOpcoesAberto)
+            //    {
+            //        FecharOpcoes();
+            //        return;
+            //    }
 
-                return;
-            }
+            //    return;
+            //}
 
             if (estaPausado)
             {
-                if (this.menuDeOpcoesAberto)
+                if (!menuDeOpcoes.activeSelf)
                 {
-                    FecharOpcoes();
-                    return;
+                    DespausarGame();
                 }
-                DespausarGame();
             } else
             {
                 PausarGame();
@@ -133,7 +126,7 @@ public class GameControle : MonoBehaviour
 
     public void AbrirOpcoes()
     {
-        this.menuEsc.SetActive(false);
+        //this.menuEsc.SetActive(false);
         this.menuDeOpcoesAberto = true;
         this.menuDeOpcoes.SetActive(true);
     }
@@ -155,11 +148,6 @@ public class GameControle : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("0_Menu");
-    }
-
-    public void VolumeDaMusica(float mixer)
-    {
-        this.musica.volume = mixer;
     }
 
     public void SaveGame()

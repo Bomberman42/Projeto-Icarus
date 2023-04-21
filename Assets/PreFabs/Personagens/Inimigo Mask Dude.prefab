@@ -273,6 +273,6 @@ MonoBehaviour:
     m_Bits: 1216
   totalDanoRecebidoPorAtaque: 5
   totalDeVida: 100
-  velocidade: 0
+  velocidade: 5
   totalDanoPorAtaque: 1
   valorDaForcaParaEmpurrarHeroi: 2
