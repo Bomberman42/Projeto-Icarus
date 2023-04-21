@@ -7,6 +7,8 @@ public class ItensColetaveis : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private CircleCollider2D circleCollider;
     private AudioSource audioSource;
+    [SerializeField]
+    private AudioSource coinSound;
     private Animator animador;
     private Heroi player;
     public GameObject prefabColetada;
@@ -41,6 +43,7 @@ public class ItensColetaveis : MonoBehaviour
 
                 if (this.coinTrigger == false)
                 {
+                    this.coinSound.Play();
                     transform.position = new Vector2(transform.position.x, transform.position.y + 1f);
                     this.coinTrigger = true;
                 }
