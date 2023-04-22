@@ -16,6 +16,7 @@ TagManager:
   - PlataformaFlutuante
   - Moeda
   - MusicSound
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -29,7 +30,7 @@ TagManager:
   - Espinho
   - Inimigo
   - Ventilador
-  - 
+  - Player
   - 
   - 
   - 

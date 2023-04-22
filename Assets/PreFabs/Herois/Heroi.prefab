@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1583581557306645005}
   - component: {fileID: 1583581557306645006}
   - component: {fileID: 1583581557306645007}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Heroi
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -151,6 +151,7 @@ MonoBehaviour:
   velocidade: 5
   alturaPulo: 9
   audioPulo: {fileID: 1583581557306645007}
+  playerLife: 4
 --- !u!95 &1583581557306645006
 Animator:
   serializedVersion: 5

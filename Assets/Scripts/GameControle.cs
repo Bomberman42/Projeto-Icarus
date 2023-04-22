@@ -6,19 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class GameControle : MonoBehaviour
 {
-    public Text pontuacaoAtual;
     [SerializeField]
     private Text totalPointsAcquired;
+    [SerializeField]
+    private GameObject menuDeOpcoes;
+
+    public Text pontuacaoAtual;
     public int pontuacaoTotal;
     private int playerTotalPoints;
     public GameObject fimDeJogo;
     public BarraDeVida barraDeVida;
     public Heroi heroi;
     public GameObject menuEsc;
-    public GameObject menuDeOpcoes;
+
     public GameObject menuPrincipal;
     public bool estaPausado;
-    private bool menuDeOpcoesAberto;
 
     public static GameControle instance;
 
@@ -32,17 +34,6 @@ public class GameControle : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            //if (this.menuPrincipal != null)
-            //{
-            //    if (this.menuDeOpcoesAberto)
-            //    {
-            //        FecharOpcoes();
-            //        return;
-            //    }
-
-            //    return;
-            //}
-
             if (estaPausado)
             {
                 if (!menuDeOpcoes.activeSelf)
@@ -127,14 +118,12 @@ public class GameControle : MonoBehaviour
     public void AbrirOpcoes()
     {
         //this.menuEsc.SetActive(false);
-        this.menuDeOpcoesAberto = true;
         this.menuDeOpcoes.SetActive(true);
     }
 
     public void FecharOpcoes()
     {
         this.menuEsc.SetActive(true);
-        this.menuDeOpcoesAberto = false;
         this.menuDeOpcoes.SetActive(false);
     }
 
