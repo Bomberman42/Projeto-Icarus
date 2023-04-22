@@ -161,10 +161,10 @@ public class Inimigo : MonoBehaviour
         RaycastHit2D feetCollider = Physics2D.Linecast(this.colisorDaEsquerda.position, new Vector2(this.colisorDaEsquerda.position.x + (0.1f * direction), this.colisorDaEsquerda.position.y), this.camadas);
         //RaycastHit2D colliderDown = Physics2D.Linecast(new Vector2(this.colisorDaEsquerda.position.x + (0.1f * direction), this.colisorDaEsquerda.position.y), new Vector2(this.colisorDaEsquerda.position.x + (0.1f * direction), this.colisorDaEsquerda.position.y + -0.8f));
 
-        if (!colliderDown)
-        {
+        //if (!colliderDown)
+        //{
 
-        }
+        //}
 
         // Se tiver tocado o a parte de baixo do colisor mas não a parte de cima...
         if (!eyeCollider && feetCollider)
