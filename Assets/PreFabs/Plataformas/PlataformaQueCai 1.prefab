@@ -218,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 7415371564639777698}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.027, y: -1.181, z: 1.7503603}
-  m_LocalScale: {x: 3.1, y: 2, z: 1}
+  m_LocalScale: {x: 6, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4904083961523494665}
@@ -336,6 +336,7 @@ MonoBehaviour:
   tempoDeQueda: 1
   removedorDeAtritoDireita: {fileID: 6377544505548376562}
   removedorDeAtritoEsquerda: {fileID: 6377544506445755098}
+  tempParaReaparecer: 0
 --- !u!61 &7415371564639777724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -376,7 +377,7 @@ TargetJoint2D:
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
   m_Anchor: {x: 0, y: 0}
-  m_Target: {x: 3.745656, y: -0.6732276}
+  m_Target: {x: -1.4908051, y: -0.0009914637}
   m_AutoConfigureTarget: 1
   m_MaxForce: 10000
   m_DampingRatio: 1
