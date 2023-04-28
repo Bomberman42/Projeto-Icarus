@@ -4,63 +4,103 @@ using UnityEngine;
 
 public class BarraDeVida : MonoBehaviour
 {
-    public int valorMaximoDeVida = 4;
-    public int vidaAtual = 4;
-    public GameObject fullLifeObject;
-    public GameObject almostLifeObject;
-    public GameObject halfLifeObject;
-    public GameObject oneLifeObject;
-    public GameObject deathObject;
+    public int valorMaximoDeVida = 10;
+    public int vidaAtual = 10;
+    public GameObject positionOne;
+    public GameObject positionTwo;
+    public GameObject positionTree;
+    public GameObject positionFour;
+    public GameObject positionFive;
+    public GameObject positionSix;
+    public GameObject positionSeven;
+    public GameObject positionEight;
+    public GameObject positionNine;
+    public GameObject positionTen;
+    public static BarraDeVida instance;
 
     void Start()
     {
         this.vidaAtual = this.valorMaximoDeVida;
-        this.fullLifeObject.SetActive(true);
-        this.almostLifeObject.SetActive(false);
-        this.halfLifeObject.SetActive(false);
-        this.oneLifeObject.SetActive(false);
-        this.deathObject.SetActive(false);
+        this.positionOne.SetActive(true);
+        this.positionTwo.SetActive(true);
+        this.positionTree.SetActive(true);
+        this.positionFour.SetActive(true);
+        this.positionFive.SetActive(true);
+        this.positionSix.SetActive(true);
+        this.positionSeven.SetActive(true);
+        this.positionEight.SetActive(true);
+        this.positionNine.SetActive(true);
+        this.positionTen.SetActive(true);
+        instance = this;
     }
 
     public void AtualizaVida()
     {
-        this.fullLifeObject.SetActive(false);
-        this.almostLifeObject.SetActive(false);
-        this.halfLifeObject.SetActive(false);
-        this.oneLifeObject.SetActive(false);
-        this.deathObject.SetActive(false);
+        this.positionOne.SetActive(false);
+        this.positionTwo.SetActive(false);
+        this.positionTree.SetActive(false);
+        this.positionFour.SetActive(false);
+        this.positionFive.SetActive(false);
+        this.positionSix.SetActive(false);
+        this.positionSeven.SetActive(false);
+        this.positionEight.SetActive(false);
+        this.positionNine.SetActive(false);
+        this.positionTen.SetActive(false);
 
         if (this.vidaAtual == 0)
         {
-            this.deathObject.SetActive(true);
             return;
         }
 
-        if (this.vidaAtual == 1)
+        if (this.vidaAtual >= 1)
         {
-            this.oneLifeObject.SetActive(true);
-            return;
+            this.positionOne.SetActive(true);
         }
 
-        if (this.vidaAtual == 2)
+        if (this.vidaAtual >= 2)
         {
-            this.halfLifeObject.SetActive(true);
-            return;
+            this.positionTwo.SetActive(true);
         }
 
-        if (this.vidaAtual == 3)
+        if (this.vidaAtual >= 3)
         {
-            this.almostLifeObject.SetActive(true);
-            return;
+            this.positionTree.SetActive(true);
         }
 
-        if (this.vidaAtual == 4)
+        if (this.vidaAtual >= 4)
         {
-            this.fullLifeObject.SetActive(true);
-            return;
+            this.positionFour.SetActive(true);
         }
 
-        this.fullLifeObject.SetActive(true);
+        if (this.vidaAtual >= 5)
+        {
+            this.positionFive.SetActive(true);
+        }
+
+        if (this.vidaAtual >= 6)
+        {
+            this.positionSix.SetActive(true);
+        }
+
+        if (this.vidaAtual >= 7)
+        {
+            this.positionSeven.SetActive(true);
+        }
+
+        if (this.vidaAtual >= 8)
+        {
+            this.positionEight.SetActive(true);
+        }
+
+        if (this.vidaAtual >= 9)
+        {
+            this.positionNine.SetActive(true);
+        }
+
+        if (this.vidaAtual >= 10)
+        {
+            this.positionTen.SetActive(true);
+        }
     }
 
     public int AdicionaVida(int valorParaAdicionar)
