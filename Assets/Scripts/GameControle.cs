@@ -10,6 +10,8 @@ public class GameControle : MonoBehaviour
     private Text totalPointsAcquired;
     [SerializeField]
     private GameObject menuDeOpcoes;
+    [SerializeField]
+    private GameObject timing;
 
     public Text pontuacaoAtual;
     public int pontuacaoTotal;
@@ -28,6 +30,10 @@ public class GameControle : MonoBehaviour
     {
         instance = this;
         LoadGame();
+        if (SceneManager.GetActiveScene().name == "0_TelaDeFases")
+        {
+            this.timing.SetActive(false);
+        }
     }
 
     private void Update()
@@ -96,6 +102,7 @@ public class GameControle : MonoBehaviour
     {
         StringVariables.sceneToLoad = nomeDaProximaCena;
         SceneManager.LoadScene("LoadScene");
+        Timer.stopTimer = true;
     }
 
     public void DanoDoHeroi(int valorDoDanoAoHeroi, float valorDaForcaParaEmpurrarHeroi)

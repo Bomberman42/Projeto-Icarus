@@ -603,7 +603,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &918227091
 PrefabInstance:
@@ -612,6 +612,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2141019778, guid: 23db713b433025845853287a29967ef6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2968998564192867409, guid: 23db713b433025845853287a29967ef6, type: 3}
       propertyPath: heroi
       value: 
@@ -620,6 +624,14 @@ PrefabInstance:
       propertyPath: totalPointsAcquired
       value: 
       objectReference: {fileID: 1771003768}
+    - target: {fileID: 4078730049668271318, guid: 23db713b433025845853287a29967ef6, type: 3}
+      propertyPath: Timing
+      value: 
+      objectReference: {fileID: 1277502428}
+    - target: {fileID: 4078730049668271318, guid: 23db713b433025845853287a29967ef6, type: 3}
+      propertyPath: timing
+      value: 
+      objectReference: {fileID: 1277502428}
     - target: {fileID: 6253261281877457450, guid: 23db713b433025845853287a29967ef6, type: 3}
       propertyPath: m_Name
       value: LevelControler
@@ -898,6 +910,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1277502428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2141019778, guid: 23db713b433025845853287a29967ef6, type: 3}
+  m_PrefabInstance: {fileID: 918227091}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1321635150
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,7 +996,7 @@ RectTransform:
   m_Children:
   - {fileID: 1859053703}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4754,7 +4771,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
