@@ -94,7 +94,8 @@ public class GameControle : MonoBehaviour
 
     public void CarregaProximaFase(string nomeDaProximaCena)
     {
-        SceneManager.LoadScene(nomeDaProximaCena);
+        StringVariables.sceneToLoad = nomeDaProximaCena;
+        SceneManager.LoadScene("LoadScene");
     }
 
     public void DanoDoHeroi(int valorDoDanoAoHeroi, float valorDaForcaParaEmpurrarHeroi)
@@ -146,7 +147,6 @@ public class GameControle : MonoBehaviour
 
     private void LoadGame()
     {
-        Debug.Log("Entrou aqui1");
         GameData data = SaveSystem.LoadGame();
 
         if (data == null) {

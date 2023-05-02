@@ -67,7 +67,8 @@ public class MainMenu : MonoBehaviour
     public void ButtonOfContinue()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(firstSceneName);
+        StringVariables.sceneToLoad = firstSceneName;
+        SceneManager.LoadScene("LoadScene");
     }
 
     public void ButtonOfNewGame()
