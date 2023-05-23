@@ -250,7 +250,6 @@ public class Inimigo : MonoBehaviour
         RaycastHit2D feetCollider = this.EnemyFeetCollider();
         RaycastHit2D colliderDown = this.EnemyDownCollider();
 
-       // Debug.Log(colliderDown);
         if (!colliderDown)
         {
             this.colidir = true;
@@ -294,7 +293,7 @@ public class Inimigo : MonoBehaviour
         this.animacaoDoInimigo.SetBool("correr", true);
 
         //Debug.Log(this.enemyTarget);
-        if (this.enemyTarget != null && !colidir)
+        if (this.enemyTarget != null && !this.colidir)
         {
             if (this.fisicaDoInimigo.velocity.x > 0)
             {
@@ -308,7 +307,7 @@ public class Inimigo : MonoBehaviour
             }
         }
 
-        if (colidir)
+        if (this.colidir)
         {
             if (this.enemyTarget != null)
             {
