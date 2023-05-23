@@ -69,6 +69,8 @@
     <Compile Include="Assets\Scripts\VariaveisCompartilhadas\BooleanVariables.cs" />
     <Compile Include="Assets\Scripts\Trampolim.cs" />
     <Compile Include="Assets\Scripts\GameControle.cs" />
+    <Compile Include="Assets\Scripts\VariaveisCompartilhadas\StringVariables.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\OptionMenu.cs" />
     <Compile Include="Assets\Scripts\TrapDoFogo.cs" />
     <Compile Include="Assets\Scripts\DetectaColisao.cs" />
@@ -80,11 +82,9 @@
     <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
     <Compile Include="Assets\Scripts\Portas.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
+    <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\LoadScene.cs" />
-    <Compile Include="Assets\Scripts\Timer.cs" />
-    <Compile Include="Assets\Scripts\VariaveisCompartilhadas\StringVariables.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

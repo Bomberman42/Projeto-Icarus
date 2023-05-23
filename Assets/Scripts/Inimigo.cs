@@ -58,7 +58,7 @@ public class Inimigo : MonoBehaviour
 
     void Update()
     {
-        FindPlayer();
+        ///FindPlayer();
 
         PatrolMovement();
     }
