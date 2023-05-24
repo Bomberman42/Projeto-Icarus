@@ -79,6 +79,9 @@ public class Inimigo : MonoBehaviour
         {
             //float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
             float altura = colisor.contacts[0].point.y - this.pontoDaCabeca.position.y;
+            Debug.Log("o valor da altura "+altura);
+            Debug.Log("o valor do contact " + colisor.contacts[0].point.y);
+            Debug.Log("o valor do ponto da cabec " + this.pontoDaCabeca.position.y);
 
             if (altura > 0)
             {
@@ -96,12 +99,12 @@ public class Inimigo : MonoBehaviour
 
                 if (this.totalDeVida > 0)
                 {
-                    this.animacaoDoInimigo.SetTrigger("dano");
+                    this.animacaoDoInimigo.SetTrigger("hit");
                     Invoke("ResetaVelocidade", 0.35f);
                     return;
                 }
 
-                this.animacaoDoInimigo.SetTrigger("morte");
+                this.animacaoDoInimigo.SetTrigger("death");
                 boxCollider2D.enabled = false;
                 // Isto faz com que o boneco não tenha fisica
                 this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;

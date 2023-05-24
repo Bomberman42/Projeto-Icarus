@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlataformaFlutuante : MonoBehaviour
 {
+    private float speed;
     private SliderJoint2D movimentarPlataforma;
     private JointMotor2D motor2D;
     public bool temEspinhos;
@@ -13,6 +14,7 @@ public class PlataformaFlutuante : MonoBehaviour
     {
         this.movimentarPlataforma = GetComponent<SliderJoint2D>();
         this.motor2D = this.movimentarPlataforma.motor;
+        this.speed = this.motor2D.motorSpeed;
 
         if (this.temEspinhos)
         {
@@ -24,12 +26,12 @@ public class PlataformaFlutuante : MonoBehaviour
     {
         if (this.movimentarPlataforma.limitState == JointLimitState2D.UpperLimit)
         {
-            this.motor2D.motorSpeed = -1;
+            this.motor2D.motorSpeed = -this.speed;
         }
 
         if (this.movimentarPlataforma.limitState == JointLimitState2D.LowerLimit)
         {
-            this.motor2D.motorSpeed = 1;
+            this.motor2D.motorSpeed = this.speed;
         }
 
         this.movimentarPlataforma.motor = this.motor2D;

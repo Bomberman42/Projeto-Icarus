@@ -141,9 +141,9 @@ public class Heroi : MonoBehaviour
 
     public void SofreuDano(float valorDaForcaParaEmpurrarHeroi)
     {
+        this.animator.SetBool("dano", true);
         this.EstaTomandoDando = true;
         this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? valorDaForcaParaEmpurrarHeroi : (valorDaForcaParaEmpurrarHeroi * -1), this.fisicaDoHeroi.position.y + (valorDaForcaParaEmpurrarHeroi * 2));
-        this.animator.SetBool("dano", true);
         Invoke("ParouDeSofrerDano", 1f);
     }
 

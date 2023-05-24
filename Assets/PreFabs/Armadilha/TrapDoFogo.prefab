@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7996962736265554563}
   - component: {fileID: 7996962736265554566}
-  - component: {fileID: 7996962736265554561}
   - component: {fileID: 7996962736265554560}
   m_Layer: 0
   m_Name: FoguinhoAtivando
@@ -86,32 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7996962736265554561
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7996962736265554562}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0006603226, y: -0.079573825}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
-    newSize: {x: 0.16, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17056479, y: 0.16085216}
-  m_EdgeRadius: 0
 --- !u!95 &7996962736265554560
 Animator:
   serializedVersion: 5
@@ -143,9 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7996962736289705265}
   - component: {fileID: 7996962736289705269}
-  - component: {fileID: 7996962736289705268}
   - component: {fileID: 7996962736289705271}
-  - component: {fileID: 7996962736289705270}
   m_Layer: 0
   m_Name: FoguinhoOn
   m_TagString: Untagged
@@ -220,32 +191,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7996962736289705268
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7996962736289705264}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0006603226, y: 0.0052227974}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
-    newSize: {x: 0.16, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17056479, y: 0.3304454}
-  m_EdgeRadius: 0
 --- !u!95 &7996962736289705271
 Animator:
   serializedVersion: 5
@@ -267,20 +212,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7996962736289705270
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7996962736289705264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8375f2883c3b7d14ea44efd8761b2b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  valorDoDanoAoHeroi: 1
-  valorDaForcaParaEmpurrarHeroi: 2
 --- !u!1 &7996962736390278308
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +222,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7996962737029874514}
   - component: {fileID: 7996962737029874515}
-  m_Layer: 0
+  - component: {fileID: 3632646291331779713}
+  - component: {fileID: 2036476211}
+  m_Layer: 6
   m_Name: TrapDoFogo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +238,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7996962736390278308}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.1777945, y: -7.557, z: 0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_ConstrainProportionsScale: 0
@@ -331,9 +264,63 @@ MonoBehaviour:
   fogoAtivando: {fileID: 7996962736265554562}
   fogoOn: {fileID: 7996962736289705264}
   fogoOff: {fileID: 7996962736996546169}
-  tempoDoFoguinhoOn: 3
+  valorDoDanoAoHeroi: 1
+  valorDaForcaParaEmpurrarHeroi: 0
+  tempoDoFoguinhoOn: 4
   tempoDoFoguinhoOff: 0
   tempoDoFoguinhoLigando: 0
+--- !u!61 &3632646291331779713
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996962736390278308}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00055713207, y: 0.16076767}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2838421, y: 0.32198024}
+  m_EdgeRadius: 0
+--- !u!61 &2036476211
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7996962736390278308}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0016222596, y: -0.16547716}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3737831, y: 0.30564493}
+  m_EdgeRadius: 0
 --- !u!1 &7996962736996546169
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +331,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7996962736996546174}
   - component: {fileID: 7996962736996546172}
-  - component: {fileID: 7996962736996546175}
   m_Layer: 0
   m_Name: FoguinhoOff
   m_TagString: Untagged
@@ -419,29 +405,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7996962736996546175
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7996962736996546169}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0006603226, y: -0.08263879}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
-    newSize: {x: 0.16, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.17056479, y: 0.15472223}
-  m_EdgeRadius: 0
