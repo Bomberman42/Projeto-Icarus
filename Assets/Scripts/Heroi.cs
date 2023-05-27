@@ -104,6 +104,12 @@ public class Heroi : MonoBehaviour
     {
         if (collision.gameObject.layer == this.indexLayerGround)
         {
+            if (this.speedOfFall <= -25)
+            {
+                GameControle.instance.DanoDoHeroi(2, 0);
+            }
+
+            this.speedOfFall = 0;
             this.tocandoOChao = true;
             this.estaPulando = false;
 
@@ -130,6 +136,8 @@ public class Heroi : MonoBehaviour
         }
     }
 
+    float speedOfFall;
+
     private void Cair()
     {
         if (this.tocandoOChao)
@@ -137,6 +145,8 @@ public class Heroi : MonoBehaviour
             this.animator.SetBool("cair", false);
             return;
         }
+
+        this.speedOfFall = this.fisicaDoHeroi.velocity.y;
 
         this.animator.SetBool("cair", true);
     }
