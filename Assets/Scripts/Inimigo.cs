@@ -1,8 +1,3 @@
-using Cinemachine.Utility;
-using System.Collections;
-using System.Collections.Generic;
-
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Inimigo : MonoBehaviour
@@ -73,46 +68,46 @@ public class Inimigo : MonoBehaviour
     //    }
     //}
 
-    private void OnCollisionEnter2D(Collision2D colisor)
+    private void OnCollisionStay2D(Collision2D colisor)
     {
         if (colisor.gameObject.tag == "Player")
         {
-            //float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
-            float altura = colisor.contacts[0].point.y - this.pontoDaCabeca.position.y;
-            Debug.Log("o valor da altura "+altura);
-            Debug.Log("o valor do contact " + colisor.contacts[0].point.y);
-            Debug.Log("o valor do ponto da cabec " + this.pontoDaCabeca.position.y);
+            ////float altura = colisor.gameObject.transform.position.y - this.pontoDaCabeca.position.y;
+            //float altura = colisor.contacts[0].point.y - this.pontoDaCabeca.position.y;
+            //Debug.Log("o valor da altura "+altura);
+            //Debug.Log("o valor do contact " + colisor.contacts[0].point.y);
+            //Debug.Log("o valor do ponto da cabec " + this.pontoDaCabeca.position.y);
 
-            if (altura > 0)
-            {
-                // Altera a velocidade do inimigo para iniciar a animação de dano.
-                AlteraVelocidade(0);
+            //if (altura > 0)
+            //{
+            //    // Altera a velocidade do inimigo para iniciar a animação de dano.
+            //    AlteraVelocidade(0);
 
-                // Remove as forças do jogador
-                colisor.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            //    // Remove as forças do jogador
+            //    colisor.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-                // Empurra o jogador para cima como um impulso por atingir um inimigo.
-                colisor.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8, ForceMode2D.Impulse);
+            //    // Empurra o jogador para cima como um impulso por atingir um inimigo.
+            //    colisor.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8, ForceMode2D.Impulse);
 
-                // Remove um ponto de vida do inimigo
-                this.totalDeVida -= this.totalDanoRecebidoPorAtaque;
+            //    // Remove um ponto de vida do inimigo
+            //    this.totalDeVida -= this.totalDanoRecebidoPorAtaque;
 
-                if (this.totalDeVida > 0)
-                {
-                    this.animacaoDoInimigo.SetTrigger("hit");
-                    Invoke("ResetaVelocidade", 0.35f);
-                    return;
-                }
+            //    if (this.totalDeVida > 0)
+            //    {
+            //        this.animacaoDoInimigo.SetTrigger("hit");
+            //        Invoke("ResetaVelocidade", 0.35f);
+            //        return;
+            //    }
 
-                this.animacaoDoInimigo.SetTrigger("death");
-                boxCollider2D.enabled = false;
-                // Isto faz com que o boneco não tenha fisica
-                this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;
-                Destroy(gameObject, 0.33f);
-            } else
-            {
-                causarDano();
-            }
+            //    this.animacaoDoInimigo.SetTrigger("death");
+            //    boxCollider2D.enabled = false;
+            //    // Isto faz com que o boneco não tenha fisica
+            //    this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;
+            //    Destroy(gameObject, 0.33f);
+            //} else
+            //{
+            //    causarDano();
+            //}
         }
     }
 

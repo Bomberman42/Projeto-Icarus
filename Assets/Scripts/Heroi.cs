@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Heroi : MonoBehaviour
@@ -72,7 +69,6 @@ public class Heroi : MonoBehaviour
 
     private void Pular()
     {
-
         if (this.bloqueiaPulo == true)
         {
             return;
@@ -82,10 +78,11 @@ public class Heroi : MonoBehaviour
         {
             if (!this.estaPulando)
             {
-                this.animator.SetBool("pular", true);
                 this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, this.alturaPulo);
                 this.puloDuplo = true;
                 this.audioPulo.Play();
+                this.animator.SetBool("cair", false);
+                this.animator.SetBool("pular", true);
             }
             else
             {
@@ -95,8 +92,12 @@ public class Heroi : MonoBehaviour
                     this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, (this.alturaPulo));
                     this.audioPulo.Play();
                     this.puloDuplo = false;
+                    this.animator.SetBool("cair", false);
+                    this.animator.SetBool("pular", true);
                 }
             }
+
+            Invoke("ResetJumpAnimation", 0.4f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
@@ -140,13 +141,25 @@ public class Heroi : MonoBehaviour
         this.animator.SetBool("cair", true);
     }
 
+    private void ResetJumpAnimation()
+    {
+        this.animator.SetBool("pular", false);
+    }
+
     public void SofreuDano(float valorDaForcaParaEmpurrarHeroi)
     {
+        this.animator.SetBool("pular", false);
+        this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? valorDaForcaParaEmpurrarHeroi : (valorDaForcaParaEmpurrarHeroi * -1), this.fisicaDoHeroi.position.y + (valorDaForcaParaEmpurrarHeroi * 2));
         this.animator.SetBool("dano", true);
         this.EstaTomandoDando = true;
-        this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.transform.rotation.y < 0 ? valorDaForcaParaEmpurrarHeroi : (valorDaForcaParaEmpurrarHeroi * -1), this.fisicaDoHeroi.position.y + (valorDaForcaParaEmpurrarHeroi * 2));
-        Invoke("ParouDeSofrerDano", 1f);
         this.audioHit.Play();
+        Invoke("TurnOffVelocity", 0.5f);
+        Invoke("ParouDeSofrerDano", 1f);
+    }
+
+    private void TurnOffVelocity()
+    {
+        this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x / 2, this.fisicaDoHeroi.velocity.y);
     }
 
     private void ParouDeSofrerDano()
