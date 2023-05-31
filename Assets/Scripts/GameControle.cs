@@ -12,6 +12,10 @@ public class GameControle : MonoBehaviour
     private GameObject menuDeOpcoes;
     [SerializeField]
     private GameObject timing;
+    [SerializeField]
+    private GameObject lifeBar;
+    [SerializeField]
+    private GameObject pointsBar;
 
     public Text pontuacaoAtual;
     public int pontuacaoTotal;
@@ -33,6 +37,8 @@ public class GameControle : MonoBehaviour
         if (SceneManager.GetActiveScene().name == "0_TelaDeFases")
         {
             this.timing.SetActive(false);
+            this.lifeBar.SetActive(false);
+            this.pointsBar.SetActive(false);
         }
     }
 
@@ -170,7 +176,10 @@ public class GameControle : MonoBehaviour
 
     public void UpdateTotalScore()
     {
+        Debug.Log("player total points " + playerTotalPoints);
         this.playerTotalPoints += this.pontuacaoTotal;
+        Debug.Log("total points " + pontuacaoTotal);
+        Debug.Log("total points adquirido " + totalPointsAcquired);
 
         if (this.playerTotalPoints >= 0 && this.totalPointsAcquired != null)
         {

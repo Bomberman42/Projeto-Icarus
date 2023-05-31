@@ -9,7 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 582548182931463588}
-  m_Layer: 0
+  - component: {fileID: 3759282991719785995}
+  - component: {fileID: 305784810807039216}
+  m_Layer: 10
   m_Name: PontoDaCabeca
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -24,13 +26,52 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 582548182931463589}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.002, y: 0.121, z: 0}
+  m_LocalPosition: {x: -0.002, y: 0.1413, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5815279195939376116}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &3759282991719785995
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582548182931463589}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16416168, y: 0.004228115}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8124895, y: 0.08672142}
+  m_EdgeRadius: 0
+--- !u!114 &305784810807039216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582548182931463589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76b12a3249e0e043ba8afd9d797de22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takesDamage: 1
 --- !u!1 &5815279195060538675
 GameObject:
   m_ObjectHideFlags: 0
@@ -103,10 +144,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5815279195939376116}
   - component: {fileID: 5815279195939376117}
-  - component: {fileID: 5815279195939376123}
   - component: {fileID: 5815279195939376118}
   - component: {fileID: 5815279195939376119}
   - component: {fileID: 924559757377730757}
+  - component: {fileID: 7622850358910123954}
   m_Layer: 10
   m_Name: Duck
   m_TagString: Enemy
@@ -185,39 +226,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5815279195939376123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5815279195939376120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f89e0442cac264581a16332dace667, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  colisorDaDireita: {fileID: 5815279196521855420}
-  colisorDaEsquerda: {fileID: 5815279195288833593}
-  visionTransform: {fileID: 5815279195060538674}
-  pontoDaCabeca: {fileID: 582548182931463588}
-  boxCollider2D: {fileID: 5815279195939376118}
-  camadas:
-    serializedVersion: 2
-    m_Bits: 65
-  radiusOfVision: 1.08
-  layerToAttack:
-    serializedVersion: 2
-    m_Bits: 4096
-  layerGround:
-    serializedVersion: 2
-    m_Bits: 64
-  rangeDown: -1.5
-  totalDanoRecebidoPorAtaque: 1
-  totalDeVida: 5
-  velocidade: 5
-  totalDanoPorAtaque: 1
-  valorDaForcaParaEmpurrarHeroi: 3
 --- !u!61 &5815279195939376118
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -286,6 +294,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7622850358910123954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5815279195939376120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19e09bcee41003e4bbbc52b77600d2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colisorDaDireita: {fileID: 5815279196521855420}
+  colisorDaEsquerda: {fileID: 5815279195288833593}
+  visionTransform: {fileID: 5815279195060538674}
+  pontoDaCabeca: {fileID: 582548182931463588}
+  boxCollider2D: {fileID: 5815279195939376118}
+  camadas:
+    serializedVersion: 2
+    m_Bits: 65
+  radiusOfVision: 1.08
+  layerToAttack:
+    serializedVersion: 2
+    m_Bits: 4096
+  layerGround:
+    serializedVersion: 2
+    m_Bits: 64
+  rangeDown: -1.5
+  totalDanoRecebidoPorAtaque: 1
+  totalDeVida: 5
+  velocidade: 5
+  totalDanoPorAtaque: 1
+  valorDaForcaParaEmpurrarHeroi: 3
 --- !u!1 &5815279196521855421
 GameObject:
   m_ObjectHideFlags: 0

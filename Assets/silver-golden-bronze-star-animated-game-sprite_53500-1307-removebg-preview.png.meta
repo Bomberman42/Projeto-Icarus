@@ -1,0 +1,849 @@
+fileFormatVersion: 2
+guid: 55de56cc602fd214da820c2afaaeb5b9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 214
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e045b9bd90732e4d9060d888ed8f7c6
+      internalID: 1346643519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 213
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5db1a94574338d4cbe6e11afc4c9776
+      internalID: 120026976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 213
+        width: 61
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25fa0653039aab94cac796d2ad9596df
+      internalID: 1529332028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 214
+        width: 55
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7fe44c29cfc0114d9af097c23082c00
+      internalID: 594109704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_4
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 213
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8007d89da5387148ba8bbcb0f5c1322
+      internalID: -145693204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_5
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 212
+        width: 17
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbfc84fa4c8b1bf42abcfd3c51ab90d3
+      internalID: 80520448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 213
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f7a1ac0ba7ca248a551198fcc03361
+      internalID: 1724392363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 213
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6535a0f10b386b47bb527c057d4a903
+      internalID: -761795357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_8
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 213
+        width: 62
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 871eeb6aa7a5dd240a34c713e204bb86
+      internalID: 966484668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_9
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 214
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d73618d9262fe4548971a4fcebdf3666
+      internalID: -1665487355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_10
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 213
+        width: 65
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec3f8662e38b24e45acd9ecb49442362
+      internalID: 999955901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_11
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 122
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ff52c3b77490d649840dec2371d94cd
+      internalID: 179263590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_12
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 122
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed615e21d54ffac478c49c6a46d236c3
+      internalID: 519595548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_13
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 122
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74318fd336223e47ba03f2283d56078
+      internalID: -1377226676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_14
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 122
+        width: 55
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366dcb1af2996324193ed5c35579b8c2
+      internalID: 811130000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_15
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 122
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ed29ed28ea232a479ce70c6eb33defe
+      internalID: 1917809178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_16
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 121
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498e73f1ed87fb041be153fc9bda41cd
+      internalID: -546259458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_17
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 122
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f555a2f0363c8b649a52e4fb6ff4aac0
+      internalID: 2140897139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_18
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 122
+        width: 55
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970606d9280a53d4ebfe0fc1896dae2d
+      internalID: -694639847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 122
+        width: 61
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0db38f06e00ebe54d83212c8887cc3b1
+      internalID: -1945328889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 122
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d167b8a277bd8428fa1c3fb23f5d6b
+      internalID: -1426760953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_21
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 122
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d546beba76ab7fd44bbf139b9f16a61e
+      internalID: 1832504627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_22
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 33
+        width: 66
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cf02d315a6a7241a41360990d08ede
+      internalID: -1691964273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 33
+        width: 66
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a99fb140f434a640b987dde1e7edff3
+      internalID: -808455470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_24
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 33
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21808216da60cc43b10a9becb2b11ff
+      internalID: 1114333911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_25
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 33
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc8e03a3b88ec446824a3f296009e9a
+      internalID: -1861208143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_26
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 33
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8786ba65bbc59849b0250283835f3b1
+      internalID: -671030120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 32
+        width: 18
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 390594c198f945c4da695b23aee18d43
+      internalID: -1081388763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_28
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 33
+        width: 39
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123826da80dd9424e977db671bfc1dae
+      internalID: -1314890302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_29
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 33
+        width: 55
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fd55cfa78f2fb42890e4d2ad495fec
+      internalID: 28381366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 34
+        width: 61
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4593df7d2681f546a3de5b9037d7182
+      internalID: 1718580890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 34
+        width: 65
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29eeb9751d74a25498f64a99e60701b7
+      internalID: -1369487984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_32
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 33
+        width: 65
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36c7bfdf12b42f478922b14844f6a0a
+      internalID: 1588240126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_0: 1346643519
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_1: 120026976
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_10: 999955901
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_11: 179263590
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_12: 519595548
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_13: -1377226676
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_14: 811130000
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_15: 1917809178
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_16: -546259458
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_17: 2140897139
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_18: -694639847
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_19: -1945328889
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_2: 1529332028
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_20: -1426760953
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_21: 1832504627
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_22: -1691964273
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_23: -808455470
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_24: 1114333911
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_25: -1861208143
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_26: -671030120
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_27: -1081388763
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_28: -1314890302
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_29: 28381366
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_3: 594109704
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_30: 1718580890
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_31: -1369487984
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_32: 1588240126
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_4: -145693204
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_5: 80520448
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_6: 1724392363
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_7: -761795357
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_8: 966484668
+      silver-golden-bronze-star-animated-game-sprite_53500-1307-removebg-preview_9: -1665487355
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,11 +7,12 @@ public class CheckChildCollider : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D colisor)
     {
+
         if (colisor.gameObject.tag == "Player")
         {
             if (this.takesDamage)
             {
-                this.transform.parent.GetComponent<EnemyCoguman>().TakesDamage(colisor.gameObject);
+                this.transform.parent.GetComponent<Enemy>().TakesDamage(colisor.gameObject);
             }
         }
     }

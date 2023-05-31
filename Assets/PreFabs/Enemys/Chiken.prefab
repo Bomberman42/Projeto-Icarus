@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4201919787283403791}
   m_Layer: 10
   m_Name: ColisorDireita
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ MonoBehaviour:
     m_Bits: 64
   rangeDown: -1.5
   totalDanoRecebidoPorAtaque: 1
-  totalDeVida: 1
+  totalDeVida: 3
   velocidade: 7
   totalDanoPorAtaque: 1
   valorDaForcaParaEmpurrarHeroi: 3
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 4201919788449538954}
   m_Layer: 10
   m_Name: ColisorEsquerdo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 4201919788741337217}
   m_Layer: 10
   m_Name: Vision
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -295,9 +295,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7129640396773978135}
-  m_Layer: 0
+  - component: {fileID: 1310990611}
+  - component: {fileID: 1310990610}
+  m_Layer: 10
   m_Name: PontoDaCabeca
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,3 +319,42 @@ Transform:
   m_Father: {fileID: 4201919787866957383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1310990611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129640396773978134}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16057754, y: 0.10190469}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6788449, y: 0.10447323}
+  m_EdgeRadius: 0
+--- !u!114 &1310990610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129640396773978134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e76b12a3249e0e043ba8afd9d797de22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  takesDamage: 1

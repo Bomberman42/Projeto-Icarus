@@ -251,7 +251,7 @@ MonoBehaviour:
   boxCollider2D: {fileID: 6345543253390865442}
   camadas:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 1
   radiusOfVision: 1.08
   layerToAttack:
     serializedVersion: 2
