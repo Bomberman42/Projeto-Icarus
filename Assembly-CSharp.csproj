@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\Characters\Enemy.cs" />
     <Compile Include="Assets\Scripts\BarraDeVida.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\StarScript.cs" />
     <Compile Include="Assets\Scripts\FileSystem\GameData.cs" />
     <Compile Include="Assets\Scripts\Characters\CheckChildCollider.cs" />
     <Compile Include="Assets\Scripts\CaixaDeFerro.cs" />
@@ -89,7 +90,6 @@
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\StarScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
