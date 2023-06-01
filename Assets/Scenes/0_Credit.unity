@@ -318,8 +318,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 75, y: -361}
-  m_SizeDelta: {x: 249.983, y: 1411.3}
+  m_AnchoredPosition: {x: 88, y: -458}
+  m_SizeDelta: {x: 249.983, y: 1457.4673}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &644907569
 MonoBehaviour:
@@ -356,6 +356,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Edson Vitor
 
+    Cleiton Mares
 
 
 
@@ -368,7 +369,8 @@ MonoBehaviour:
 
     Edson Vitor
 
-    Cleiton Mares
+    Cleiton
+    Mares
 
 
 
@@ -380,8 +382,7 @@ MonoBehaviour:
 
 
 
-    Edson
-    Vitor
+    Edson Vitor
 
     Cleiton Mares
 
@@ -426,7 +427,21 @@ MonoBehaviour:
 
 
 
-    aaaaa
+    Pixel Frog / Pixel adventure
+
+    Wenes Soares / Crie
+    seus jogos
+
+
+
+
+
+
+
+
+
+
+    Cleiton Mares
 
 '
 --- !u!222 &644907570
@@ -956,7 +971,9 @@ MonoBehaviour:
 
 
 
-'
+
+
+    Sound Engineer'
 --- !u!222 &2057284591
 CanvasRenderer:
   m_ObjectHideFlags: 0
