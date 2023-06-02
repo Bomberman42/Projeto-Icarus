@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -21,6 +23,16 @@ public class Enemy : MonoBehaviour
     private BoxCollider2D boxCollider2D;
     [SerializeField]
     private LayerMask camadas;
+    [SerializeField]
+    private float damageTime = 0.45f;
+    [SerializeField]
+    private float deathTime = 0.45f;
+    [SerializeField]
+    private GameObject projectile;
+    [SerializeField]
+    private GameObject projectileArea;
+    private float timer;
+
 
     [Header("Campo de Visão")]
     [SerializeField]
@@ -84,7 +96,7 @@ public class Enemy : MonoBehaviour
         if (this.totalDeVida > 0)
         {
             this.animacaoDoInimigo.SetTrigger("hit");
-            Invoke("ResetaVelocidade", 0.45f);
+            Invoke("ResetaVelocidade", this.damageTime);
         }
         else
         {
@@ -92,7 +104,7 @@ public class Enemy : MonoBehaviour
             boxCollider2D.enabled = false;
             // Isto faz com que o boneco não tenha fisica
             this.fisicaDoInimigo.bodyType = RigidbodyType2D.Kinematic;
-            Destroy(this.gameObject, 0.45f);
+            Destroy(this.gameObject, this.deathTime);
         }
 
         Invoke("ResetIsTakingDamage", 0.10f);
@@ -256,8 +268,89 @@ public class Enemy : MonoBehaviour
         ////Debug.DrawRay(new Vector2(this.colisorDaEsquerda.position.x, this.colisorDaEsquerda.position.y), new Vector2(this.transform.localScale.x > 0 ? 1 : -1, 1), Color.red
     }
 
+    public Transform FindPlayer()
+    {
 
+        float direction = this.transform.localScale.x > 0 ? 1 : -1;
+        Collider2D collider = Physics2D.OverlapCircle(this.transform.position, this.radiusOfVision, this.layerToAttack);
+        //Debug.Log(collider);
 
+        if (collider != null)
+        {
+            //this.enemyTarget = collider.transform;
+
+            Vector2 startPosition = this.visionTransform.position;
+            Vector2 targetPosition = collider.transform.position;
+            Vector2 directionBetweenTarget = targetPosition - startPosition;
+            directionBetweenTarget = directionBetweenTarget.normalized;
+
+            RaycastHit2D hit = Physics2D.Raycast(startPosition, directionBetweenTarget);
+
+            //Debug.Log(hit.transform.tag);
+            // Encontrou algum objeto.
+            if (hit.transform != null)
+            {
+                //Debug.Log(hit.collider.gameObject.tag);
+                if (hit.transform.CompareTag("Player"))
+                {
+                    this.enemyTarget = hit.transform;
+                }
+                else
+                {
+                    this.enemyTarget = null;
+                }
+            }
+            else
+            {
+                this.enemyTarget = null;
+            }
+        }
+        else
+        {
+            this.enemyTarget = null;
+        }
+
+        return this.enemyTarget;
+    }
+
+    public void AttackingThePlayer()
+    {
+        // Se não tiver nenhum alvo marcado deve voltar a patrulhar.
+        if (this.enemyTarget == null)
+        {
+            return;
+        }
+
+        float direction = this.transform.localScale.x > 0 ? 1 : -1;
+
+        // Se não tiver nenhum alvo marcado deve voltar a patrulhar.
+        if (this.enemyTarget != null)
+        {
+            Vector2 currentPosition = this.transform.position;
+            Vector2 targetPosition = this.enemyTarget.position;
+
+            float distance = Vector2.Distance(currentPosition, targetPosition);
+
+            if (distance >= 0)
+            {
+                Vector2 directionBetweenTarget = targetPosition - currentPosition;
+                directionBetweenTarget = directionBetweenTarget.normalized;
+                this.sprite.flipX = directionBetweenTarget.x > 0;
+            }
+        }
+
+    }
+
+    public float InvokeAttack(float timer, float shootingTime)
+    {
+        if (timer < shootingTime)
+        {
+            return timer;
+        }
+        GameObject projectile = Instantiate(this.projectile, this.projectileArea.transform, true);
+        projectile.transform.parent = null;
+        return 0;
+    }
 
 
 
@@ -317,51 +410,6 @@ public class Enemy : MonoBehaviour
     //        collision.collider.enabled = true;
     //    }
     //}
-
-    private void FindPlayer()
-    {
-        Collider2D collider = Physics2D.OverlapCircle(this.transform.position, this.radiusOfVision, this.layerToAttack);
-        //Debug.Log(collider);
-
-        if (collider != null)
-        {
-            //this.enemyTarget = collider.transform;
-
-            float direction = this.transform.localScale.x > 0 ? 1 : -1;
-            Vector2 startPosition = this.visionTransform.position;
-            Vector2 targetPosition = collider.transform.position;
-            Vector2 directionBetweenTarget = targetPosition - startPosition;
-            directionBetweenTarget = directionBetweenTarget.normalized;
-
-            RaycastHit2D hit = Physics2D.Raycast(startPosition, directionBetweenTarget);
-
-            //Debug.Log(hit.transform.tag);
-            // Encontrou algum objeto.
-            if (hit.transform != null)
-            {
-                //Debug.Log(hit.collider.gameObject.tag);
-                if (hit.transform.CompareTag("Player"))
-                {
-                    this.enemyTarget = hit.transform;
-                }
-                else
-                {
-                    this.enemyTarget = null;
-                }
-            }
-            else
-            {
-                this.enemyTarget = null;
-            }
-        }
-        else
-        {
-            this.enemyTarget = null;
-        }
-    }
-
-
-
 
     private void MovementOfAttackingTheEnemy()
     {
