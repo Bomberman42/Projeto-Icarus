@@ -189,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3812470298093888974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.107, y: 0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -379,8 +379,10 @@ MonoBehaviour:
     m_Bits: 1
   damageTime: 0.45
   deathTime: 0.45
-  projectile: {fileID: 0}
-  shootingTime: 0
+  projectile: {fileID: 1013442671684102571, guid: 91d560b39e74a0540aa0168de265d798, type: 3}
+  projectileArea: {fileID: 3812470298093888974}
+  projectileSpeed: 5
+  projectileDamage: 2
   radiusOfVision: 10
   layerToAttack:
     serializedVersion: 2
@@ -394,3 +396,4 @@ MonoBehaviour:
   velocidade: 0
   totalDanoPorAtaque: 2
   valorDaForcaParaEmpurrarHeroi: 3
+  shootingTime: 2.5

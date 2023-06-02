@@ -1,3 +1,4 @@
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -32,6 +33,11 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private GameObject projectileArea;
     private float timer;
+    [SerializeField]
+    private float projectileSpeed;
+    [SerializeField]
+    private int projectileDamage;
+    private bool isDying;
 
 
     [Header("Campo de Visão")]
@@ -72,7 +78,7 @@ public class Enemy : MonoBehaviour
             // Se o inimigo Não estiver sofrendo dano, então pode causar dano no player
             if (!this.isTakingDamage)
             {
-                causarDano();
+                CausarDano();
             }
         }
     }
@@ -100,6 +106,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            this.isDying = true;
             this.animacaoDoInimigo.SetTrigger("death");
             boxCollider2D.enabled = false;
             // Isto faz com que o boneco não tenha fisica
@@ -130,13 +137,18 @@ public class Enemy : MonoBehaviour
         this.velocidade = transform.localScale.x >= 0f ? this.velocidadeDeInicio : -this.velocidadeDeInicio;
     }
 
-    private void causarDano()
+    private void CausarDano()
     {
         GameControle.instance.DanoDoHeroi(this.totalDanoPorAtaque, this.valorDaForcaParaEmpurrarHeroi);
     }
 
     public void PatrolMovement()
     {
+        if(this.isDying)
+        {
+            return;
+        }
+
         Vector2 directionToRun = new Vector2(this.velocidade, this.fisicaDoInimigo.velocity.y);
         this.colidir = Physics2D.Linecast(this.colisorDaDireita.position, this.colisorDaEsquerda.position, this.camadas);
         RaycastHit2D eyeCollider = this.EnemyEyeCollider();
@@ -270,6 +282,10 @@ public class Enemy : MonoBehaviour
 
     public Transform FindPlayer()
     {
+        if (this.isDying)
+        {
+            return null;
+        }
 
         float direction = this.transform.localScale.x > 0 ? 1 : -1;
         Collider2D collider = Physics2D.OverlapCircle(this.transform.position, this.radiusOfVision, this.layerToAttack);
@@ -315,13 +331,16 @@ public class Enemy : MonoBehaviour
 
     public void AttackingThePlayer()
     {
+        if (this.isDying)
+        {
+            return;
+        }
+
         // Se não tiver nenhum alvo marcado deve voltar a patrulhar.
         if (this.enemyTarget == null)
         {
             return;
         }
-
-        float direction = this.transform.localScale.x > 0 ? 1 : -1;
 
         // Se não tiver nenhum alvo marcado deve voltar a patrulhar.
         if (this.enemyTarget != null)
@@ -343,12 +362,21 @@ public class Enemy : MonoBehaviour
 
     public float InvokeAttack(float timer, float shootingTime)
     {
+        if (this.isDying)
+        {
+            return 0;
+        }
+
         if (timer < shootingTime)
         {
             return timer;
         }
-        GameObject projectile = Instantiate(this.projectile, this.projectileArea.transform, true);
+        float direction = this.transform.localScale.x > 0 ? 1 : -1;
+        this.animacaoDoInimigo.SetTrigger("attack");
+        GameObject projectile = Instantiate(this.projectile, this.projectileArea.transform.position, this.projectile.transform.rotation);
         projectile.transform.parent = null;
+        projectile.GetComponent<Projectile>().projectileDamage = this.projectileDamage;
+        projectile.GetComponent<Projectile>().projectileSpeed = this.sprite.flipX ? this.projectileSpeed : - this.projectileSpeed;
         return 0;
     }
 

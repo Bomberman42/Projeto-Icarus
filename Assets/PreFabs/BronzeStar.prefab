@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6917327439385109835}
   - component: {fileID: 6917327439385109832}
   - component: {fileID: 1766709588}
+  - component: {fileID: 1766709589}
   m_Layer: 0
   m_Name: BronzeStar
   m_TagString: Untagged
@@ -133,3 +134,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.66, y: 0.63}
   m_EdgeRadius: 0
+--- !u!114 &1766709589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6917327439385109833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ec887e85585ebe498897f5d271435cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starType: 2
