@@ -179,7 +179,15 @@ MonoBehaviour:
   boxCollider2D: {fileID: 3315568871802219686}
   camadas:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 32897
+  damageTime: 0.45
+  deathTime: 0.45
+  projectile: {fileID: 0}
+  projectileArea: {fileID: 0}
+  projectileSpeed: 0
+  projectileDamage: 0
+  isInvulnerable: 0
+  jumpHeadForce: 8
   radiusOfVision: 1.08
   layerToAttack:
     serializedVersion: 2

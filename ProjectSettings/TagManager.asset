@@ -18,6 +18,8 @@ TagManager:
   - MusicSound
   - Enemy
   - Projectile
+  - Ground
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -34,7 +36,7 @@ TagManager:
   - Player
   - Coin
   - Projectile
-  - 
+  - Box
   - 
   - 
   - 

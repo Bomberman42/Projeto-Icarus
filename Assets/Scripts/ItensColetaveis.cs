@@ -15,7 +15,7 @@ public class ItensColetaveis : MonoBehaviour
     public int valorDoIten;
     private bool coletada;
     private bool coinTrigger;
-    
+    private bool canCollect;
 
     void Start()
     {
@@ -34,27 +34,32 @@ public class ItensColetaveis : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnTriggerStay2D(Collider2D collider)
     {
-        if(collider.gameObject.tag == "Player")
+        if (collider.gameObject.tag == "Player")
         {
             if (gameObject.CompareTag("Moeda"))
             {
-
                 if (this.coinTrigger == false)
                 {
                     this.coinSound.Play();
                     transform.position = new Vector2(transform.position.x, transform.position.y + 1f);
                     this.coinTrigger = true;
+                    Invoke("ActivateCoinCollectionTrigger", 0.5f);
                 }
                 else
                 {
+                    if (!this.canCollect)
+                    {
+                        return;
+                    }
+
                     this.coinTrigger = false;
                     this.prefabColetada.SetActive(true);
                     this.circleCollider.enabled = false;
                     this.spriteRenderer.enabled = false;
                     GameControle.instance.AtualizaPontuacaoAtual(valorDoIten);
-                    Destroy(gameObject, 0.2f);
+                    Destroy(this.gameObject, 0.2f);
                 }
                 return;
             }
@@ -68,5 +73,10 @@ public class ItensColetaveis : MonoBehaviour
 
             Destroy(this.gameObject, 0.5f);
         }
+    }
+
+    private void ActivateCoinCollectionTrigger()
+    {
+        this.canCollect = true;
     }
 }

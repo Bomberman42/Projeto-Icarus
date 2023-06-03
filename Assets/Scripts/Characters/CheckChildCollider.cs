@@ -7,7 +7,6 @@ public class CheckChildCollider : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D colisor)
     {
-
         if (colisor.gameObject.tag == "Player")
         {
             if (this.takesDamage)

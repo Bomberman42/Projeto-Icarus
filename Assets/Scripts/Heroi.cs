@@ -8,7 +8,10 @@ public class Heroi : MonoBehaviour
     public float alturaPulo;
     private bool tocandoOChao = true;
 
-    // Forma para exportar o valor de uma variável sem que outras classes possam mudar o valor, apenas para ler o valor 
+    [SerializeField]
+    public Transform feetCollider;
+
+    // Forma para exportar o valor de uma variï¿½vel sem que outras classes possam mudar o valor, apenas para ler o valor 
     public bool EstaTomandoDando { get; private set; }
 
     private bool bloqueiaPulo;
@@ -57,7 +60,7 @@ public class Heroi : MonoBehaviour
 
         this.transform.eulerAngles = direction > 0f ? this.olhandoParaDireita : this.olhandoParaEsquerda;
 
-        // Se o heroi esta sofrendo dano, não deve se movimentar por alungs segundos.
+        // Se o heroi esta sofrendo dano, nï¿½o deve se movimentar por alungs segundos.
         if (this.EstaTomandoDando)
         {
             return;
@@ -80,6 +83,7 @@ public class Heroi : MonoBehaviour
             {
                 this.fisicaDoHeroi.velocity = new Vector2(this.fisicaDoHeroi.velocity.x, this.alturaPulo);
                 this.puloDuplo = true;
+                this.estaPulando = true;
                 this.audioPulo.Play();
                 this.animator.SetBool("cair", false);
                 this.animator.SetBool("pular", true);
@@ -100,30 +104,76 @@ public class Heroi : MonoBehaviour
             Invoke("ResetJumpAnimation", 0.4f);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    public void CollideOnGround()
     {
-        if (collision.gameObject.layer == this.indexLayerGround)
+        if (this.speedOfFall <= -25)
         {
-            if (this.speedOfFall <= -25)
-            {
-                GameControle.instance.DanoDoHeroi(2, 0);
-            }
-
-            this.speedOfFall = 0;
-            this.tocandoOChao = true;
-            this.estaPulando = false;
-
-            // Deve encerrar a animação de pulo caso o heroi toque no chão.
-            this.animator.SetBool("pular", false);
+            GameControle.instance.DanoDoHeroi(2, 0);
         }
+
+        this.speedOfFall = 0;
+        this.tocandoOChao = true;
+        this.estaPulando = false;
+
+        // Deve encerrar a animaï¿½ï¿½o de pulo caso o heroi toque no chï¿½o.
+        this.animator.SetBool("pular", false);
+        this.animator.SetBool("cair", false);
     }
+
+    public void CollideOnEnemyHead()
+    {
+        this.speedOfFall = 0;
+        this.tocandoOChao = false;
+        this.estaPulando = false;
+    }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    //if (collision.gameObject.CompareTag("Enemy"))
+    //    //{
+    //    //    this.speedOfFall = 0;
+    //    //    this.tocandoOChao = false;
+    //    //    this.estaPulando = false;
+    //    //}
+
+    //    //if (collision.gameObject.layer == this.indexLayerGround)
+    //    //{
+    //    //    //float feetY = this.feetCollider.transform.position.y;
+    //    //    //float groundY = collision.gameObject.transform.position.y;
+    //    //    //float centerGroundY = (collision.gameObject.transform.localScale.y / 2);
+
+    //    //    //Debug.Log("Feet Y: " + feetY);
+    //    //    //Debug.Log("Ground Y: " + groundY + centerGroundY);
+    //    //    //Debug.Log("Resultado: " + (feetY < (groundY + centerGroundY)));
+
+    //    //    //if (!(feetY < (groundY + centerGroundY)) || feetY < groundY)
+    //    //    //{
+    //    //    //    return;
+    //    //    //}
+
+    //    //    // Se a velocidade de queda do heroi for maior que 25 entï¿½o ele deve receber dando.
+    //    //    if (this.speedOfFall <= -25)
+    //    //    {
+    //    //        GameControle.instance.DanoDoHeroi(2, 0);
+    //    //    }
+
+    //    //    this.speedOfFall = 0;
+    //    //    this.tocandoOChao = true;
+    //    //    this.estaPulando = false;
+
+    //    //    // Deve encerrar a animaï¿½ï¿½o de pulo caso o heroi toque no chï¿½o.
+    //    //    this.animator.SetBool("pular", false);
+    //    //    this.animator.SetBool("cair", false);
+    //    //}
+    //}
 
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.layer == this.indexLayerGround)
         {
             this.tocandoOChao = true;
-            this.estaPulando = false;
+            //this.estaPulando = false;
         }
     }
 
@@ -131,7 +181,7 @@ public class Heroi : MonoBehaviour
     {
         if (collision.gameObject.layer == this.indexLayerGround)
         {
-            this.estaPulando = true;
+            //this.estaPulando = true;
             this.tocandoOChao = false;
         }
     }

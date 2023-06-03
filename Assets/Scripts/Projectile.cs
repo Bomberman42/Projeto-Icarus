@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rig;
     public float projectileSpeed;
     public int projectileDamage;
 
     void Start()
     {
-        this.rigidbody = GetComponent<Rigidbody2D>();
+        this.rig = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        this.rigidbody.velocity = new Vector2(this.projectileSpeed, rigidbody.velocity.y);
+        this.rig.velocity = new Vector2(this.projectileSpeed, this.rig.velocity.y);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

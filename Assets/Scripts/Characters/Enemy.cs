@@ -38,7 +38,10 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private int projectileDamage;
     private bool isDying;
-
+    [SerializeField]
+    private bool isInvulnerable;
+    [SerializeField]
+    private float jumpHeadForce = 8;
 
     [Header("Campo de Visão")]
     [SerializeField]
@@ -94,12 +97,12 @@ public class Enemy : MonoBehaviour
         colisorGameObject.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         // Empurra o jogador para cima como um impulso por atingir um inimigo.
-        colisorGameObject.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 8, ForceMode2D.Impulse);
+        colisorGameObject.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * this.jumpHeadForce, ForceMode2D.Impulse);
 
         // Remove um ponto de vida do inimigo
         this.totalDeVida -= this.totalDanoRecebidoPorAtaque;
 
-        if (this.totalDeVida > 0)
+        if (this.totalDeVida > 0 || this.isInvulnerable)
         {
             this.animacaoDoInimigo.SetTrigger("hit");
             Invoke("ResetaVelocidade", this.damageTime);
