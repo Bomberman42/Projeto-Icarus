@@ -1,22 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ventilador : MonoBehaviour
 {
+    private AreaEffector2D effector;
+    [SerializeField]
+    private bool effectorActive;
+    [SerializeField]
+    private GameObject airParticle;
+    private Animator anim;
 
     void Start()
     {
-        
+        this.anim = GetComponent<Animator>();
+        this.effector = GetComponent<AreaEffector2D>();
+        DisableEffector();
+        if(effectorActive)
+        {
+            EnableEffector();
+        }
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    collision.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-    //}
-
-    void Update()
+    public void EnableEffector()
     {
-        
+        this.effector.enabled = true;
+        this.anim.SetBool("active", true);
+        this.airParticle.SetActive(true);
+    }
+
+    public void DisableEffector()
+    {
+        this.effector.enabled = false;
+        this.anim.SetBool("active", false);
+        this.airParticle.SetActive(false);
     }
 }
