@@ -9,6 +9,8 @@ public class CaixaDeFerro : MonoBehaviour
     private Transform feetColliderR;
     [SerializeField]
     private Transform feetColliderL;
+    [SerializeField]
+    private bool colisionIgnore;
 
     [SerializeField]
     private LayerMask layerGround;
@@ -58,14 +60,14 @@ public class CaixaDeFerro : MonoBehaviour
             float playerPositionX = collision.gameObject.GetComponent<Rigidbody2D>().velocity.x;
             Vector2 boxNewPosition = new Vector2(playerPositionX, this.rig.velocity.y);
 
-            if (!this.rCollider && playerPositionX > 0)
+            if (!this.rCollider && playerPositionX > 0 && !this.colisionIgnore)
             {
                 this.rig.velocity = Vector2.zero;
                 this.rig.bodyType = RigidbodyType2D.Kinematic;
                 return;
             }
 
-            if (!this.lCollider && playerPositionX < 0)
+            if (!this.lCollider && playerPositionX < 0 && !this.colisionIgnore)
             {
                 this.rig.velocity = Vector2.zero;
                 this.rig.bodyType = RigidbodyType2D.Kinematic;

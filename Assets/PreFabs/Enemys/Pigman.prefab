@@ -273,6 +273,14 @@ MonoBehaviour:
   camadas:
     serializedVersion: 2
     m_Bits: 65
+  damageTime: 0.45
+  deathTime: 0.45
+  projectile: {fileID: 0}
+  projectileArea: {fileID: 0}
+  projectileSpeed: 0
+  projectileDamage: 0
+  isInvulnerable: 0
+  jumpHeadForce: 8
   radiusOfVision: 1.08
   layerToAttack:
     serializedVersion: 2
@@ -283,7 +291,7 @@ MonoBehaviour:
   rangeDown: -1.5
   totalDanoRecebidoPorAtaque: 1
   totalDeVida: 1
-  velocidade: 5
+  velocidade: 3
   totalDanoPorAtaque: 1
   valorDaForcaParaEmpurrarHeroi: 3
 --- !u!1 &8967183625544043789

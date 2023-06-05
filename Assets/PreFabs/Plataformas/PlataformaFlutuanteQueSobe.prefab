@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8340334619635024116}
   - component: {fileID: 8340334619635024107}
   - component: {fileID: 486643497}
-  m_Layer: 6
+  m_Layer: 16
   m_Name: PlataformaFlutuanteQueSobe
   m_TagString: PlataformaFlutuante
   m_Icon: {fileID: 0}
@@ -147,7 +147,7 @@ SliderJoint2D:
   m_BreakTorque: Infinity
   m_AutoConfigureConnectedAnchor: 0
   m_Anchor: {x: -0.000000010928119, y: -0.0000000014607906}
-  m_ConnectedAnchor: {x: -8.68, y: 1}
+  m_ConnectedAnchor: {x: -8.48, y: 1.003}
   m_AutoConfigureAngle: 0
   m_Angle: 90
   m_UseMotor: 1

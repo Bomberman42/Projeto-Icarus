@@ -186,8 +186,8 @@ MonoBehaviour:
   projectileArea: {fileID: 0}
   projectileSpeed: 0
   projectileDamage: 0
-  isInvulnerable: 0
-  jumpHeadForce: 8
+  isInvulnerable: 1
+  jumpHeadForce: 13.2
   radiusOfVision: 1.08
   layerToAttack:
     serializedVersion: 2
