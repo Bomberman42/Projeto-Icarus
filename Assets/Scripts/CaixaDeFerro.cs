@@ -11,6 +11,7 @@ public class CaixaDeFerro : MonoBehaviour
     private Transform feetColliderL;
     [SerializeField]
     private bool colisionIgnore;
+    private bool canMove = true;
 
     [SerializeField]
     private LayerMask layerGround;
@@ -52,6 +53,11 @@ public class CaixaDeFerro : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
+            if(this.canMove == true)
+            {
+                return;
+            }
+
             if (collision.gameObject.GetComponent<Heroi>().feetCollider.position.y > this.transform.position.y)
             {
                 return;
@@ -75,6 +81,22 @@ public class CaixaDeFerro : MonoBehaviour
             }
 
             this.rig.velocity = boxNewPosition;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            this.canMove = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            this.canMove = false;
         }
     }
 

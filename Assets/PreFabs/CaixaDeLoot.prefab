@@ -309,8 +309,9 @@ MonoBehaviour:
   animacaoDaCaixa: {fileID: 2129898369126340277}
   coletada: {fileID: 8705231017317074983}
   tempoDeMorte: 0.4
-  loot: {fileID: 3999425644894421148, guid: 518eefb6b4f79e445bfb0c08bc31fb21, type: 3}
-  quantidadeDeLoot: 2
+  loot: {fileID: 3152388156711883160, guid: c4148d92178286248915a645ed1e0d7e, type: 3}
+  quantidadeDeLoot: 1
+  crashinSound: {fileID: 1373131944}
 --- !u!1001 &2129898368721435606
 PrefabInstance:
   m_ObjectHideFlags: 0

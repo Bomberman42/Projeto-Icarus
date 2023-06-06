@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\TrapDoFogo.cs" />
     <Compile Include="Assets\Scripts\DetectaColisao.cs" />
     <Compile Include="Assets\Scripts\SoundController.cs" />
+    <Compile Include="Assets\Scripts\ButtonAction.cs" />
     <Compile Include="Assets\Scripts\Caixas.cs" />
     <Compile Include="Assets\Scripts\FileSystem\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Inimigo.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\ButtonAction.cs" />
+    <Compile Include="Assets\Scripts\CheckColission.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

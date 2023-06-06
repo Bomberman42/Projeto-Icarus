@@ -7,6 +7,7 @@ public class PlataformaFlutuante : MonoBehaviour
     private float speed;
     private SliderJoint2D movimentarPlataforma;
     private JointMotor2D motor2D;
+    public bool forceUp;
     public bool temEspinhos;
     public GameObject espinhos;
 
@@ -24,8 +25,9 @@ public class PlataformaFlutuante : MonoBehaviour
 
     private void Movimentar()
     {
-        if (this.movimentarPlataforma.limitState == JointLimitState2D.UpperLimit)
+        if (this.movimentarPlataforma.limitState == JointLimitState2D.UpperLimit || this.forceUp)
         {
+            this.forceUp = false;
             this.motor2D.motorSpeed = -this.speed;
         }
 

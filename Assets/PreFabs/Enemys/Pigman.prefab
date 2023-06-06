@@ -272,7 +272,7 @@ MonoBehaviour:
   boxCollider2D: {fileID: 3152388156711883158}
   camadas:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 32961
   damageTime: 0.45
   deathTime: 0.45
   projectile: {fileID: 0}

@@ -12,7 +12,11 @@ public class Caixas : MonoBehaviour
     public float tempoDeMorte;
     public GameObject loot;
     public int quantidadeDeLoot = 1;
+    [SerializeField]
+    private int enemyLife;
     private bool destruindoObjeto;
+    [SerializeField]
+    private AudioSource crashinSound;
 
     void Update()
     {
@@ -27,10 +31,16 @@ public class Caixas : MonoBehaviour
             {
                 for(int index = 0; index < quantidadeDeLoot; index++)
                 {
+                    if (this.loot.CompareTag("Enemy") && this.enemyLife > 0)
+                    {
+                        this.loot.GetComponent<Enemy>().totalDeVida = this.enemyLife;
+                    }
+
                     Instantiate(this.loot, new Vector3(Random.Range(transform.parent.position.x +0.3f, transform.parent.position.x -0.3f), Random.Range(transform.parent.position.y +0.3f, transform.parent.position.y -0.3f)), transform.parent.rotation);
                 }
             }
 
+            this.crashinSound.Play();
             Destroy(transform.parent.gameObject, this.tempoDeMorte);
         }
     }
@@ -39,6 +49,11 @@ public class Caixas : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            if (collider.gameObject.name == "FeetCollider")
+            {
+                return;
+            }
+
             this.animacaoDaCaixa.SetTrigger("dano");
             Vector2 posicao = new Vector2(0f, this.forcaParaCima ? this.impacto: - this.impacto);
             this.vidaDaCaixa--;

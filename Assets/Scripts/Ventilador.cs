@@ -8,9 +8,11 @@ public class Ventilador : MonoBehaviour
     [SerializeField]
     private GameObject airParticle;
     private Animator anim;
+    private BoxCollider2D boxCollider;
 
     void Start()
     {
+        this.boxCollider = GetComponent<BoxCollider2D>();
         this.anim = GetComponent<Animator>();
         this.effector = GetComponent<AreaEffector2D>();
         DisableEffector();
@@ -22,6 +24,7 @@ public class Ventilador : MonoBehaviour
 
     public void EnableEffector()
     {
+        this.boxCollider.enabled = true;
         this.effector.enabled = true;
         this.anim.SetBool("active", true);
         this.airParticle.SetActive(true);
@@ -29,6 +32,7 @@ public class Ventilador : MonoBehaviour
 
     public void DisableEffector()
     {
+        this.boxCollider.enabled = false;
         this.effector.enabled = false;
         this.anim.SetBool("active", false);
         this.airParticle.SetActive(false);
