@@ -17,6 +17,7 @@ public class ValidaNivelAtual : MonoBehaviour
 
         if (pontuacaoAtual == valorMaximoDeFrutas)
         {
+            Debug.Log("Isso aqui");
             GameControle.instance.FinishedStage();
         }
     }

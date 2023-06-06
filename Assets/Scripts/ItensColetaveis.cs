@@ -9,16 +9,23 @@ public class ItensColetaveis : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField]
     private AudioSource coinSound;
+    [SerializeField]
+    private float coinSpeed = 5f;
     private Animator animador;
     private Heroi player;
     public GameObject prefabColetada;
     public int valorDoIten;
     private bool coletada;
+    public bool collide;
     private bool coinTrigger;
     private bool canCollect;
+    private float variation;
+    private float curentSpeed;
+    
 
     void Start()
     {
+        this.curentSpeed = coinSpeed;
         this.animador = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.circleCollider = GetComponent<CircleCollider2D>();
@@ -30,7 +37,9 @@ public class ItensColetaveis : MonoBehaviour
     {
         if(this.coinTrigger)
         {
-            transform.position = Vector2.Lerp(transform.position, this.player.transform.position, Time.deltaTime * 5f);
+            Vector2 playerPosition = new Vector2 (this.player.transform.position.x, this.player.transform.position.y + this.variation);
+            transform.position = Vector2.Lerp(transform.position, playerPosition, Time.deltaTime * this.curentSpeed);
+            this.curentSpeed += Random.Range(0, 0.03f); 
         }
     }
 
@@ -38,14 +47,18 @@ public class ItensColetaveis : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
+            this.collide = true;
+
             if (gameObject.CompareTag("Moeda"))
             {
                 if (this.coinTrigger == false)
                 {
+                    this.variation = Random.Range(-0.3f, 0.3f);
                     this.coinSound.Play();
                     transform.position = new Vector2(transform.position.x, transform.position.y + 1f);
-                    this.coinTrigger = true;
-                    Invoke("ActivateCoinCollectionTrigger", 0.5f);
+          
+                    Invoke("ChangeCoinTrigger", 0.1f);
+                    Invoke("ActivateCoinCollectionTrigger", 0.3f);
                 }
                 else
                 {
@@ -78,5 +91,10 @@ public class ItensColetaveis : MonoBehaviour
     private void ActivateCoinCollectionTrigger()
     {
         this.canCollect = true;
+    }
+
+    private void ChangeCoinTrigger()
+    {
+        this.coinTrigger = true;
     }
 }

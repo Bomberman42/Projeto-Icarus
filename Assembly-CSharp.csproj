@@ -93,9 +93,9 @@
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyLineAttack.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
+    <Compile Include="Assets\Scripts\CheckColission.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\CheckColission.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

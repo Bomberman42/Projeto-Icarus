@@ -176,10 +176,7 @@ public class GameControle : MonoBehaviour
 
     public void UpdateTotalScore()
     {
-        Debug.Log("player total points " + playerTotalPoints);
         this.playerTotalPoints += this.pontuacaoTotal;
-        Debug.Log("total points " + pontuacaoTotal);
-        Debug.Log("total points adquirido " + totalPointsAcquired);
 
         if (this.playerTotalPoints >= 0 && this.totalPointsAcquired != null)
         {
@@ -193,6 +190,17 @@ public class GameControle : MonoBehaviour
     }
 
     public void FinishedStage() {
+        ItensColetaveis[] objectsWithScript = FindObjectsOfType<ItensColetaveis>();
+        Debug.Log("Entrou aqui");
+        for (int index = 0; index < objectsWithScript.Length; index++)
+        {
+            if (objectsWithScript[index].GetComponent<ItensColetaveis>().collide)
+            {
+                Debug.Log(objectsWithScript[index].name);
+                AtualizaPontuacaoAtual(objectsWithScript[index].GetComponent<ItensColetaveis>().valorDoIten);
+                Debug.Log(objectsWithScript[index].GetComponent<ItensColetaveis>().valorDoIten);
+            }
+        }
         UpdateTotalScore();
         SaveGame();
         this.pontuacaoTotal = 0;

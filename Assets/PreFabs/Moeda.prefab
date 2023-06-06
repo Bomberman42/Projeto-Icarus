@@ -102,8 +102,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinSound: {fileID: 8483233417336254995}
+  coinSpeed: 5
   prefabColetada: {fileID: 1223754158522359443}
   valorDoIten: 5
+  coinTrigger: 0
 --- !u!95 &8483233416391231923
 Animator:
   serializedVersion: 5
