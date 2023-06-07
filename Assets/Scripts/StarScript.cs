@@ -15,4 +15,9 @@ public class StarScript : MonoBehaviour
             GameControle.instance.FinishedStage();
         }
     }
+
+    public string TypeStar()
+    {
+        return this.starType.ToString();
+    }
 }

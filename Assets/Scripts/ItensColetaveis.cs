@@ -11,11 +11,9 @@ public class ItensColetaveis : MonoBehaviour
     private AudioSource coinSound;
     [SerializeField]
     private float coinSpeed = 5f;
-    private Animator animador;
     private Heroi player;
     public GameObject prefabColetada;
     public int valorDoIten;
-    private bool coletada;
     public bool collide;
     private bool coinTrigger;
     private bool canCollect;
@@ -26,7 +24,6 @@ public class ItensColetaveis : MonoBehaviour
     void Start()
     {
         this.curentSpeed = coinSpeed;
-        this.animador = GetComponent<Animator>();
         this.spriteRenderer = GetComponent<SpriteRenderer>();
         this.circleCollider = GetComponent<CircleCollider2D>();
         this.audioSource = GetComponent<AudioSource>();

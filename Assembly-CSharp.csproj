@@ -96,6 +96,9 @@
     <Compile Include="Assets\Scripts\CheckColission.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
+    <Compile Include="Assets\Scripts\FileSystem\Level.cs" />
+    <Compile Include="Assets\Scripts\VariaveisCompartilhadas\LevelVariables.cs" />
+    <Compile Include="Assets\Scripts\FileSystem\LevelData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

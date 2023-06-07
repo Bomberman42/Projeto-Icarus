@@ -8,6 +8,7 @@ public class Timer : MonoBehaviour
     private float timeLevel;
     public Text timeLevel_txt;
     public static bool stopTimer;
+   
 
     void Start()
     {
@@ -21,5 +22,10 @@ public class Timer : MonoBehaviour
             this.timeLevel += Time.deltaTime;
             this.timeLevel_txt.text = this.timeLevel.ToString("0");
         }
+    }
+
+    public string GetTime()
+    {
+        return this.timeLevel.ToString();
     }
 }

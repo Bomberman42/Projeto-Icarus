@@ -16,6 +16,7 @@ public class GameControle : MonoBehaviour
     private GameObject lifeBar;
     [SerializeField]
     private GameObject pointsBar;
+    private List<Level> levels = new List<Level>();
 
     public Text pontuacaoAtual;
     public int pontuacaoTotal;
@@ -158,6 +159,11 @@ public class GameControle : MonoBehaviour
         SaveSystem.SaveGame(this);
     }
 
+    private void SaveLevel()
+    {
+        SaveSystem.SaveLevelGame(this);
+    }
+
     private void LoadGame()
     {
         GameData data = SaveSystem.LoadGame();
@@ -165,6 +171,8 @@ public class GameControle : MonoBehaviour
         if (data == null) {
             return;
         }
+
+        this.levels = SaveSystem.LoadLevelGame();
 
         this.playerTotalPoints = data.playerTotalPoints;
 
@@ -189,21 +197,48 @@ public class GameControle : MonoBehaviour
         return this.playerTotalPoints;
     }
 
+    private void UpdateLevelList()
+    {
+
+        if(this.levels == null)
+        {
+            this.levels = new List<Level>();
+        }
+
+        StarScript gameObjectStar = FindObjectOfType<StarScript>();
+        Level level = new Level();
+        level.star = gameObjectStar.GetComponent<StarScript>().TypeStar();
+        level.type = SceneManager.GetActiveScene().name;
+        level.coins = this.pontuacaoTotal.ToString();
+        level.time = this.timing.GetComponent<Timer>().GetTime();
+        this.levels.Add(level);
+
+        //int index = this.levels.FindIndex(level => level.type == SceneManager.GetActiveScene().name);
+        //if (index >= 0)
+        //{
+
+        //}
+    }
+
     public void FinishedStage() {
         ItensColetaveis[] objectsWithScript = FindObjectsOfType<ItensColetaveis>();
-        Debug.Log("Entrou aqui");
         for (int index = 0; index < objectsWithScript.Length; index++)
         {
             if (objectsWithScript[index].GetComponent<ItensColetaveis>().collide)
             {
-                Debug.Log(objectsWithScript[index].name);
                 AtualizaPontuacaoAtual(objectsWithScript[index].GetComponent<ItensColetaveis>().valorDoIten);
-                Debug.Log(objectsWithScript[index].GetComponent<ItensColetaveis>().valorDoIten);
             }
         }
         UpdateTotalScore();
+        UpdateLevelList();
         SaveGame();
+        SaveLevel();
         this.pontuacaoTotal = 0;
         CarregaProximaFase("0_TelaDeFases");
+    }
+
+    public List<Level> GetLevel()
+    {
+        return this.levels;
     }
 }
