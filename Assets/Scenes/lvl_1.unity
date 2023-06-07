@@ -3511,10 +3511,6 @@ PrefabInstance:
       propertyPath: heroi
       value: 
       objectReference: {fileID: 1723459885}
-    - target: {fileID: 4078730049997440846, guid: 23db713b433025845853287a29967ef6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.56
-      objectReference: {fileID: 0}
     - target: {fileID: 5144943837615907501, guid: 23db713b433025845853287a29967ef6, type: 3}
       propertyPath: m_Name
       value: LevelControler

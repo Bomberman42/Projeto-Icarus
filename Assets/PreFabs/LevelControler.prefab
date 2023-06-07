@@ -823,6 +823,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalPointsAcquired: {fileID: 0}
   menuDeOpcoes: {fileID: 8969651146856363786}
+  timing: {fileID: 2141019778}
+  lifeBar: {fileID: 8513172708057826749}
+  pointsBar: {fileID: 7123425307925917991}
   pontuacaoAtual: {fileID: 4078730049386298720}
   pontuacaoTotal: 0
   fimDeJogo: {fileID: 4078730048734672373}
@@ -857,7 +860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4078730049997440851}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.49, y: -10.1, z: 0}
+  m_LocalPosition: {x: 3.49, y: -10.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2682,7 +2685,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1132914855725553467, guid: 2146d308970c3c94aac1e99bed6b55a3, type: 3}
   m_PrefabInstance: {fileID: 692283446900284297}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 8513172708057826749}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40a6061f7521d374e8440c933a7863e6, type: 3}
@@ -2691,5 +2694,10 @@ MonoBehaviour:
 --- !u!4 &8513172708057826748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9205253569929387573, guid: 2146d308970c3c94aac1e99bed6b55a3, type: 3}
+  m_PrefabInstance: {fileID: 692283446900284297}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8513172708057826749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9205253569929387572, guid: 2146d308970c3c94aac1e99bed6b55a3, type: 3}
   m_PrefabInstance: {fileID: 692283446900284297}
   m_PrefabAsset: {fileID: 0}

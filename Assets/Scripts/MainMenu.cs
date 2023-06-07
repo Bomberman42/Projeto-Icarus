@@ -73,6 +73,7 @@ public class MainMenu : MonoBehaviour
 
     public void ButtonOfNewGame()
     {
+        SaveSystem.DeleteLevelGame();
         SaveSystem.DeleteGame();
         ButtonOfContinue();
     }

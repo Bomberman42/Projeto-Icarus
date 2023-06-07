@@ -47,6 +47,12 @@ public static class SaveSystem
     public static List<Level> LoadLevelGame()
     {
         List<Level> levels = new List<Level>();
+
+        if(File.Exists(levelFileName) == false)
+        {
+            return levels;
+        }
+
         using (BinaryReader reader = new BinaryReader(File.Open(levelFileName, FileMode.Open)))
         {
             int count = reader.ReadInt32();
@@ -132,5 +138,13 @@ public static class SaveSystem
 
         formatter.Serialize(stream, data);
         stream.Close();
+    }
+
+    public static void DeleteLevelGame()
+    {
+        if (File.Exists(levelFileName))
+        {
+            File.Delete(levelFileName);
+        }
     }
 }
