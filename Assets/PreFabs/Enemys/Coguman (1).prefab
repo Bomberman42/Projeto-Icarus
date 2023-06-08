@@ -188,6 +188,11 @@ MonoBehaviour:
   projectileDamage: 0
   isInvulnerable: 1
   jumpHeadForce: 13.2
+  canStopWhenCollide: 1
+  timeToRestInSeconds: 2
+  layersToIgnoreWhileAttack:
+    serializedVersion: 2
+    m_Bits: 0
   radiusOfVision: 1.08
   layerToAttack:
     serializedVersion: 2

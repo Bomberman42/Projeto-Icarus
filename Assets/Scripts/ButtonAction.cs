@@ -10,6 +10,9 @@ public class ButtonAction : MonoBehaviour
     private GameObject turnOnObject;
     private bool isActive;
     private Animator anim;
+    private GameObject boxObject;
+    private GameObject playerObject;
+    private int fanLayer = 11;
 
     private void Start()
     {
@@ -30,8 +33,8 @@ public class ButtonAction : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box"))
         {
-            float width = collision.gameObject.CompareTag("Player") ? 0.2f : 0.29f;
-            float heightUp = collision.gameObject.CompareTag("Player") ? 0.2f : 0.1f;
+            float width = collision.gameObject.CompareTag("Player") ? 0.2f : collision.gameObject.GetComponent<Rigidbody2D>().velocity.x != 0f ? 0.29f : 0;
+            float heightUp = collision.gameObject.CompareTag("Player") ? 0.2f : collision.gameObject.GetComponent<Rigidbody2D>().velocity.x != 0f ? 0.1f : 0;
             Vector2 colliderVelocity;
             if (collision.gameObject.name == "FeetCollider")
             {
@@ -68,15 +71,12 @@ public class ButtonAction : MonoBehaviour
 
             this.anim.SetBool("active", true);
             this.isActive = true;
-            if (this.turnOnObject.name == "Fan")
+            if (this.turnOnObject.layer == this.fanLayer)
             {
                 this.turnOnObject.GetComponent<Ventilador>().EnableEffector();
             }
         }
     }
-
-    private GameObject boxObject;
-    private GameObject playerObject;
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -99,7 +99,7 @@ public class ButtonAction : MonoBehaviour
         {
             this.anim.SetBool("active", false);
             this.isActive = false;
-            if (this.turnOnObject.name == "Fan")
+            if (this.turnOnObject.layer == this.fanLayer)
             {
                 this.turnOnObject.GetComponent<Ventilador>().DisableEffector();
             }

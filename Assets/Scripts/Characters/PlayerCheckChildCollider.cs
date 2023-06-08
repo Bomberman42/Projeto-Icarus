@@ -6,6 +6,7 @@ public class PlayerCheckChildCollider : MonoBehaviour
     private int indexLayerBox = 15;
     private int indexLayerPlataform = 16;
     private int indexLayerButtonAction = 17;
+    private int indexLayerWall = 7;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,7 +21,8 @@ public class PlayerCheckChildCollider : MonoBehaviour
             if (
                 collision.gameObject.layer == this.indexLayerGround ||
                 collision.gameObject.layer == this.indexLayerBox ||
-                collision.gameObject.layer == this.indexLayerPlataform
+                collision.gameObject.layer == this.indexLayerPlataform ||
+                collision.gameObject.layer == this.indexLayerWall
             )
             {
                 this.transform.parent.GetComponent<Heroi>().CollideOnGround();

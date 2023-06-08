@@ -25,6 +25,8 @@ public class Heroi : MonoBehaviour
     public AudioSource audioPulo;
     public AudioSource audioHit;
     public int playerLife = 4;
+    [SerializeField]
+    private float gravityPlayer = 3f;
 
     void Start()
     {
@@ -66,12 +68,35 @@ public class Heroi : MonoBehaviour
             return;
         }
 
+        if(this.fisicaDoHeroi.gravityScale == 0f)
+        {
+            return;
+        }
+
         this.fisicaDoHeroi.velocity = new Vector2(direction * this.velocidade, this.fisicaDoHeroi.velocity.y);
         this.animator.SetBool("correr", true);
     }
 
+    public void RemoveGravity()
+    {
+        this.fisicaDoHeroi.velocity = Vector2.zero;
+        this.fisicaDoHeroi.gravityScale = 0f;
+    }
+
+    public void ReturnGravity()
+    {
+        this.fisicaDoHeroi.gravityScale = this.gravityPlayer;
+        this.fisicaDoHeroi.velocity = Vector2.zero;
+    }
+
     private void Pular()
     {
+
+        if (this.fisicaDoHeroi.gravityScale == 0f)
+        {
+            return;
+        }
+
         if (this.bloqueiaPulo == true)
         {
             return;

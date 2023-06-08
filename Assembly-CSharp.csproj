@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\ValidaNivelAtual.cs" />
     <Compile Include="Assets\Scripts\ItensColetaveis.cs" />
     <Compile Include="Assets\Scripts\VariaveisCompartilhadas\BooleanVariables.cs" />
+    <Compile Include="Assets\Scripts\FileSystem\Level.cs" />
     <Compile Include="Assets\Scripts\Trampolim.cs" />
     <Compile Include="Assets\Scripts\GameControle.cs" />
     <Compile Include="Assets\Scripts\VariaveisCompartilhadas\StringVariables.cs" />
@@ -84,21 +85,20 @@
     <Compile Include="Assets\Scripts\SoundController.cs" />
     <Compile Include="Assets\Scripts\ButtonAction.cs" />
     <Compile Include="Assets\Scripts\Caixas.cs" />
+    <Compile Include="Assets\Scripts\FileSystem\LevelData.cs" />
     <Compile Include="Assets\Scripts\FileSystem\SaveSystem.cs" />
     <Compile Include="Assets\Scripts\Inimigo.cs" />
     <Compile Include="Assets\Scripts\Heroi.cs" />
     <Compile Include="Assets\Scripts\PlataformaQueCaii.cs" />
     <Compile Include="Assets\Scripts\BackGround.cs" />
     <Compile Include="Assets\Scripts\Portas.cs" />
+    <Compile Include="Assets\Scripts\VariaveisCompartilhadas\LevelVariables.cs" />
     <Compile Include="Assets\Scripts\PlataformaFlutuante.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyLineAttack.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
     <Compile Include="Assets\Scripts\CheckColission.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\FileSystem\Level.cs" />
-    <Compile Include="Assets\Scripts\VariaveisCompartilhadas\LevelVariables.cs" />
-    <Compile Include="Assets\Scripts\FileSystem\LevelData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

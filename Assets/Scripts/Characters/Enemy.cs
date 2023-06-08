@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -42,6 +43,19 @@ public class Enemy : MonoBehaviour
     private bool isInvulnerable;
     [SerializeField]
     private float jumpHeadForce = 8;
+    [SerializeField]
+    private bool canStopWhenCollide = false;
+    [SerializeField]
+    private float timeToRestInSeconds;
+    private float currentTimeOfRest;
+    private float hurtingTheHero;
+    private float timeHurtingTheHero = 0.3f;
+    private bool changeThePositionOfEnemy;
+
+
+    [Header("Atributos do inimigo que ataca")]
+    [SerializeField]
+    private LayerMask layersToIgnoreWhileAttack;
 
     [Header("Campo de Visão")]
     [SerializeField]
@@ -81,8 +95,26 @@ public class Enemy : MonoBehaviour
             // Se o inimigo Não estiver sofrendo dano, então pode causar dano no player
             if (!this.isTakingDamage)
             {
+                this.hurtingTheHero += Time.deltaTime;
+
+                if(this.hurtingTheHero > this.timeHurtingTheHero)
+                {
+                    this.changeThePositionOfEnemy = true;
+                    this.hurtingTheHero = 0f;
+                    return;
+                }
+
                 CausarDano();
             }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            this.changeThePositionOfEnemy = false;
+            this.hurtingTheHero = 0f;
         }
     }
 
@@ -145,6 +177,29 @@ public class Enemy : MonoBehaviour
         GameControle.instance.DanoDoHeroi(this.totalDanoPorAtaque, this.valorDaForcaParaEmpurrarHeroi);
     }
 
+    private bool CountTheEnemyRestTime(RaycastHit2D eyeCollider, RaycastHit2D feetCollider)
+    {
+        if(!this.canStopWhenCollide)
+        {
+            return false;
+        }
+
+        if (!eyeCollider && !feetCollider && this.currentTimeOfRest == 0f)
+        {
+            return false;
+        }
+
+        this.currentTimeOfRest += Time.deltaTime;
+
+        if(this.currentTimeOfRest > this.timeToRestInSeconds)
+        {
+            this.currentTimeOfRest = 0;
+            return false;
+        }
+
+        return true;
+    }
+
     public void PatrolMovement()
     {
         if(this.isDying)
@@ -158,8 +213,16 @@ public class Enemy : MonoBehaviour
         RaycastHit2D feetCollider = this.EnemyFeetCollider();
         RaycastHit2D colliderDown = this.EnemyDownCollider();
 
-        if (!colliderDown)
+        if(CountTheEnemyRestTime(eyeCollider, feetCollider))
         {
+            this.colidir = true;
+            this.animacaoDoInimigo.SetBool("correr", false);
+            return;
+        }
+
+        if (!colliderDown || this.changeThePositionOfEnemy == true)
+        {
+            this.changeThePositionOfEnemy = false;
             this.colidir = true;
         }
 
@@ -303,7 +366,7 @@ public class Enemy : MonoBehaviour
             Vector2 directionBetweenTarget = targetPosition - startPosition;
             directionBetweenTarget = directionBetweenTarget.normalized;
 
-            RaycastHit2D hit = Physics2D.Raycast(startPosition, directionBetweenTarget);
+            RaycastHit2D hit = Physics2D.Raycast(startPosition, directionBetweenTarget, 1000f, ~this.layersToIgnoreWhileAttack);
 
             //Debug.Log(hit.transform.tag);
             // Encontrou algum objeto.
