@@ -177,14 +177,14 @@ public class Enemy : MonoBehaviour
         GameControle.instance.DanoDoHeroi(this.totalDanoPorAtaque, this.valorDaForcaParaEmpurrarHeroi);
     }
 
-    private bool CountTheEnemyRestTime(RaycastHit2D eyeCollider, RaycastHit2D feetCollider)
+    private bool CountTheEnemyRestTime(RaycastHit2D eyeCollider, RaycastHit2D feetCollider, RaycastHit2D colliderDown)
     {
         if(!this.canStopWhenCollide)
         {
             return false;
         }
 
-        if (!eyeCollider && !feetCollider && this.currentTimeOfRest == 0f)
+        if (!eyeCollider && !feetCollider && colliderDown && this.currentTimeOfRest == 0f)
         {
             return false;
         }
@@ -213,8 +213,10 @@ public class Enemy : MonoBehaviour
         RaycastHit2D feetCollider = this.EnemyFeetCollider();
         RaycastHit2D colliderDown = this.EnemyDownCollider();
 
-        if(CountTheEnemyRestTime(eyeCollider, feetCollider))
+        if(CountTheEnemyRestTime(eyeCollider, feetCollider, colliderDown))
         {
+            this.changeThePositionOfEnemy = true;
+            this.fisicaDoInimigo.velocity = Vector2.zero;
             this.colidir = true;
             this.animacaoDoInimigo.SetBool("correr", false);
             return;
