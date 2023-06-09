@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float timeLevel;
+    public float timeLevel {get; private set;}
     public Text timeLevel_txt;
     public static bool stopTimer;
    

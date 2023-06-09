@@ -8,11 +8,14 @@ public class ButtonAction : MonoBehaviour
 
     [SerializeField]
     private GameObject turnOnObject;
-    private bool isActive;
+    public bool isActive {get; private set;}
     private Animator anim;
     private GameObject boxObject;
     private GameObject playerObject;
     private int fanLayer = 11;
+    public float timeOfActiveButton { get; private set;}
+    [SerializeField]
+    private GameObject timer;
 
     private void Start()
     {
@@ -70,7 +73,14 @@ public class ButtonAction : MonoBehaviour
             }
 
             this.anim.SetBool("active", true);
+            this.timeOfActiveButton = this.timer.GetComponent<Timer>().timeLevel;
             this.isActive = true;
+
+            if (this.turnOnObject == null)
+            {
+                return;
+            }
+
             if (this.turnOnObject.layer == this.fanLayer)
             {
                 this.turnOnObject.GetComponent<Ventilador>().EnableEffector();
@@ -98,7 +108,14 @@ public class ButtonAction : MonoBehaviour
         if (this.playerObject == null && this.boxObject == null)
         {
             this.anim.SetBool("active", false);
+            this.timeOfActiveButton = 0;
             this.isActive = false;
+
+            if(this.turnOnObject == null)
+            {
+                return;
+            }
+
             if (this.turnOnObject.layer == this.fanLayer)
             {
                 this.turnOnObject.GetComponent<Ventilador>().DisableEffector();
