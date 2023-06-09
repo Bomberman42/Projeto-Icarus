@@ -56,6 +56,7 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\FaseController.cs" />
     <Compile Include="Assets\Scripts\Characters\EnemyGeneric.cs" />
     <Compile Include="Assets\Scripts\Serra.cs" />
     <Compile Include="Assets\Scripts\BlocoDaMorte.cs" />
@@ -99,7 +100,6 @@
     <Compile Include="Assets\Scripts\CheckColission.cs" />
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
-    <Compile Include="Assets\Scripts\FaseController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

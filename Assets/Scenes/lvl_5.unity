@@ -3885,6 +3885,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2965055967617065965, guid: 13fac70bb05fa114bb471e84da049000, type: 3}
+      propertyPath: totalDeVida
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2965055967617065965, guid: 13fac70bb05fa114bb471e84da049000, type: 3}
       propertyPath: shootingTime
       value: 1
       objectReference: {fileID: 0}
@@ -4692,11 +4696,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645010, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.96
+      value: -4.57
       objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645010, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.86
+      value: 8.87
       objectReference: {fileID: 0}
     - target: {fileID: 1583581557306645010, guid: fb15a9d021b50c949868f4b6284d45d2, type: 3}
       propertyPath: m_LocalPosition.z

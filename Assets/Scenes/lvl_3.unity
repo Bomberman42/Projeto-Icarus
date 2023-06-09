@@ -4146,6 +4146,10 @@ PrefabInstance:
       value: ButtonAction
       objectReference: {fileID: 0}
     - target: {fileID: 7289744846075811439, guid: 1945d0466aef8c84d97f9cf98915e306, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 222103129}
+    - target: {fileID: 7289744846075811439, guid: 1945d0466aef8c84d97f9cf98915e306, type: 3}
       propertyPath: turnOnObject
       value: 
       objectReference: {fileID: 143257821}
