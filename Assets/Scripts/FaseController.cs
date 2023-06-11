@@ -9,7 +9,7 @@ public class FaseController : MonoBehaviour
     private float[] timeOfPressedButton;
     [SerializeField]
     private GameObject turnOnObject;
-    private bool isObjectActive;
+    //private bool isObjectActive;
     [SerializeField]
     private float[] limitsPosition;
 
@@ -42,7 +42,7 @@ public class FaseController : MonoBehaviour
 
         if(isInOrder == true)
         {
-            this.isObjectActive = true;
+            //this.isObjectActive = true;
             TurnOnGameObjects();
         }
         else

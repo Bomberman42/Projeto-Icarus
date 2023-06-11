@@ -261,7 +261,7 @@ MonoBehaviour:
   isInvulnerable: 0
   jumpHeadForce: 8
   canStopWhenCollide: 1
-  timeToRestInSeconds: 2
+  timeToRestInSeconds: 0.5
   layersToIgnoreWhileAttack:
     serializedVersion: 2
     m_Bits: 0
@@ -274,7 +274,7 @@ MonoBehaviour:
     m_Bits: 64
   rangeDown: -1.5
   totalDanoRecebidoPorAtaque: 1
-  totalDeVida: 5
+  totalDeVida: 1
   velocidade: 3
   totalDanoPorAtaque: 1
   valorDaForcaParaEmpurrarHeroi: 3

@@ -16,6 +16,8 @@ public class CaixaDeFerro : MonoBehaviour
     [SerializeField]
     private LayerMask layerGround;
 
+    private bool isFall;
+
     private void Start()
     {
         this.rig = GetComponent<Rigidbody2D>();
@@ -28,6 +30,11 @@ public class CaixaDeFerro : MonoBehaviour
     {
         this.rCollider = CheckFeetColliderR();
         this.lCollider = CheckFeetColliderL();
+
+        if (this.isFall)
+        {
+            //this.rig.velocity = new Vector2(0, this.rig.velocity.y);
+        }
     }
 
     private void OnDrawGizmos()
@@ -112,5 +119,18 @@ public class CaixaDeFerro : MonoBehaviour
         float direction = this.transform.localScale.x > 0 ? 1 : -1;
         RaycastHit2D lCollider = Physics2D.Linecast(this.feetColliderL.position, new Vector2(this.feetColliderL.position.x - (0.3f * direction), this.feetColliderL.position.y), this.layerGround);
         return lCollider;
+    }
+
+    public void isNotCollideOnGround()
+    {
+        this.rig.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+        this.rig.velocity = new Vector2(0, this.rig.velocity.y - 1);
+        this.isFall = true;
+    }
+
+    public void isCollideOnGround()
+    {
+        this.rig.constraints = RigidbodyConstraints2D.FreezeRotation;
+        this.isFall = false;
     }
 }

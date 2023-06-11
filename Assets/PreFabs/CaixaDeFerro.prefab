@@ -72,6 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008604220}
   - component: {fileID: 1008604221}
+  - component: {fileID: 1932536775}
   m_Layer: 15
   m_Name: FeetColliderCenter
   m_TagString: Untagged
@@ -107,7 +108,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0005160868, y: -0.03573664}
+  m_Offset: {x: 0.0012571476, y: -0.03573664}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -118,8 +119,20 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17972928, y: 0.089503594}
+  m_Size: {x: 0.20580244, y: 0.089503594}
   m_EdgeRadius: 0
+--- !u!114 &1932536775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008604219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a1e29cfc1c8d47a4f56e12ca93202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7180618841365090630
 GameObject:
   m_ObjectHideFlags: 0

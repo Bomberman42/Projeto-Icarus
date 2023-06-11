@@ -22,7 +22,6 @@ public class Portas : MonoBehaviour
         this.animacaoDasPortas = GetComponent<Animator>();
         int indexOf = this.nivelDaPorta.IndexOf("_");
         int numberDoor = int.Parse(this.nivelDaPorta.Substring(indexOf + 1));
-        Debug.Log(numberDoor);
         int index = this.levels.FindIndex(level => level.type == "lvl_" + (numberDoor - 1));
         if (index >= 0 || (numberDoor - 1) == 0)
         {

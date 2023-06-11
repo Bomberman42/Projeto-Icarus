@@ -12,7 +12,6 @@ public class LoadScene : MonoBehaviour
     private void Start()
     {
         StartScene();
-        Debug.Log("entrou aqui no start");
     }
 
     public void StartScene()

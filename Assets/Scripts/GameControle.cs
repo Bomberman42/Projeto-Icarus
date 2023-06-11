@@ -18,6 +18,9 @@ public class GameControle : MonoBehaviour
     private GameObject pointsBar;
     private List<Level> levels = new List<Level>();
 
+    [SerializeField]
+    private GameObject deathBar;
+
     public Text pontuacaoAtual;
     public int pontuacaoTotal;
     private int playerTotalPoints;
@@ -40,6 +43,7 @@ public class GameControle : MonoBehaviour
             this.timing.SetActive(false);
             this.lifeBar.SetActive(false);
             this.pointsBar.SetActive(false);
+            this.deathBar.SetActive(false);
         }
     }
 
