@@ -13,6 +13,7 @@ public class ButtonAction : MonoBehaviour
     private GameObject boxObject;
     private GameObject playerObject;
     private int fanLayer = 11;
+    private int lightLayer = 18;
     public float timeOfActiveButton { get; private set;}
     [SerializeField]
     private GameObject timer;
@@ -85,6 +86,11 @@ public class ButtonAction : MonoBehaviour
             {
                 this.turnOnObject.GetComponent<Ventilador>().EnableEffector();
             }
+
+            if (this.turnOnObject.layer == this.lightLayer)
+            {
+                this.turnOnObject.GetComponent<LightsColor>().EnableEffector();
+            }
         }
     }
 
@@ -119,6 +125,11 @@ public class ButtonAction : MonoBehaviour
             if (this.turnOnObject.layer == this.fanLayer)
             {
                 this.turnOnObject.GetComponent<Ventilador>().DisableEffector();
+            }
+
+            if (this.turnOnObject.layer == this.lightLayer)
+            {
+                this.turnOnObject.GetComponent<LightsColor>().DisableEffector();
             }
         }
     }

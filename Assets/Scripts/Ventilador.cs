@@ -70,12 +70,22 @@ public class Ventilador : MonoBehaviour
 
     private void RemoveGravityPlayer()
     {
+        if(this.recivePlayer == null)
+        {
+            return;
+        }
+
         this.recivePlayer.GetComponent<Heroi>().RemoveGravity();
         this.playerTargget = true;
     }
 
     private void ReturnGravityPlayer()
     {
+        if (this.recivePlayer == null)
+        {
+            return;
+        }
+
         this.recivePlayer.GetComponent<Heroi>().ReturnGravity();
         this.playerTargget = false;
     }
