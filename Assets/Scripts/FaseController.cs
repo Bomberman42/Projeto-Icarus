@@ -52,9 +52,9 @@ public class FaseController : MonoBehaviour
         {
             if(this.timeOfPressedButton.Where(x => x != 0).Count() == 3)
             {
-                this.light1.GetComponent<LightsColor>().DisableEffector();
-                this.light2.GetComponent<LightsColor>().DisableEffector();
-                this.light3.GetComponent<LightsColor>().DisableEffector();
+                this.light1.GetComponent<LightsColor>().ErrorEffector();
+                this.light2.GetComponent<LightsColor>().ErrorEffector();
+                this.light3.GetComponent<LightsColor>().ErrorEffector();
             }
             else
             {
