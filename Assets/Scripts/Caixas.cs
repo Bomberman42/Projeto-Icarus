@@ -17,6 +17,8 @@ public class Caixas : MonoBehaviour
     private bool destruindoObjeto;
     [SerializeField]
     private AudioSource crashinSound;
+    [SerializeField]
+    private float newEnemyRangeDown = 0;
 
     void Update()
     {
@@ -34,6 +36,11 @@ public class Caixas : MonoBehaviour
                     if (this.loot.CompareTag("Enemy") && this.enemyLife > 0)
                     {
                         this.loot.GetComponent<Enemy>().totalDeVida = this.enemyLife;
+
+                        if (this.newEnemyRangeDown != 0)
+                        {
+                            this.loot.GetComponent<Enemy>().rangeDown = this.newEnemyRangeDown;
+                        }
                     }
 
                     Instantiate(this.loot, new Vector3(Random.Range(transform.parent.position.x +0.3f, transform.parent.position.x -0.3f), Random.Range(transform.parent.position.y +0.3f, transform.parent.position.y -0.3f)), transform.parent.rotation);

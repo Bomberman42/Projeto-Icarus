@@ -15,6 +15,16 @@ public class FaseController : MonoBehaviour
     public GameObject light1;
     public GameObject light2;
     public GameObject light3;
+    [Serializable]
+    public class ButtonInAction
+    {
+        public GameObject buttonGameObject;
+        public GameObject wallGameObject;
+        public float initialWallPosition;
+        public float finalWallPosition;
+    }
+    [SerializeField]
+    private ButtonInAction buttonAction;
 
 
     void Start()
@@ -24,6 +34,32 @@ public class FaseController : MonoBehaviour
 
     void Update()
     {
+
+        if(this.buttonAction != null && this.buttonAction.buttonGameObject != null && this.buttonAction.wallGameObject != null)
+        {
+            Vector2 currentWallPosition = this.buttonAction.wallGameObject.transform.position;
+
+            if (this.buttonAction.buttonGameObject.GetComponent<ButtonAction>().isActive)
+            {
+                Vector2 newWallPosition = new Vector2(currentWallPosition.x, currentWallPosition.y + 1 * Time.deltaTime);
+
+                if(currentWallPosition.y < this.buttonAction.finalWallPosition)
+                {
+                    this.buttonAction.wallGameObject.transform.position = newWallPosition;
+                }
+            }
+            else
+            {
+                Vector2 newWallPosition = new Vector2(currentWallPosition.x, currentWallPosition.y - 1 * Time.deltaTime);
+
+                if(currentWallPosition.y > this.buttonAction.initialWallPosition)
+                {
+                    this.buttonAction.wallGameObject.transform.position = newWallPosition;
+                }
+            }
+            
+        }
+
         if (this.turnOnObject == null)
         {
             return;

@@ -2058,6 +2058,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pigman
       objectReference: {fileID: 0}
+    - target: {fileID: 3152388156711883240, guid: c4148d92178286248915a645ed1e0d7e, type: 3}
+      propertyPath: isInvulnerable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3152388156711883240, guid: c4148d92178286248915a645ed1e0d7e, type: 3}
+      propertyPath: canStopWhenCollide
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4148d92178286248915a645ed1e0d7e, type: 3}
 --- !u!4 &818648876 stripped
@@ -4666,7 +4674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8483233416391231920, guid: 2b69052a0b9cf80428a58a0f438587c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.0978677
+      value: -2.007
       objectReference: {fileID: 0}
     - target: {fileID: 8483233416391231920, guid: 2b69052a0b9cf80428a58a0f438587c3, type: 3}
       propertyPath: m_LocalPosition.z

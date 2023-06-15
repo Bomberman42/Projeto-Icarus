@@ -1,6 +1,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -65,8 +66,7 @@ public class Enemy : MonoBehaviour
     private Transform enemyTarget;
     [SerializeField]
     private LayerMask layerGround;
-    [SerializeField]
-    private float rangeDown;
+    public float rangeDown;
 
     [Header("Status do Ininmigo")]
     public int totalDanoRecebidoPorAtaque;
@@ -308,7 +308,8 @@ public class Enemy : MonoBehaviour
     private RaycastHit2D EnemyDownCollider()
     {
         float direction = this.transform.localScale.x > 0 ? 1 : -1;
-        RaycastHit2D colliderDown = Physics2D.Linecast(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(this.transform.position.x + (direction == 1 ? 0.4f : -0.4f), this.transform.position.y + this.rangeDown), this.layerGround);
+        float xDirection = this.transform.position.x + (direction == 1 ? 0.5f : -0.5f);
+        RaycastHit2D colliderDown = Physics2D.Linecast(new Vector2(xDirection, this.transform.position.y), new Vector2(xDirection + (direction == 1 ? 0.4f : -0.4f), this.transform.position.y + this.rangeDown), this.layerGround);
         return colliderDown;
     }
 
@@ -328,13 +329,14 @@ public class Enemy : MonoBehaviour
         //Gizmos.DrawLine(this.colisorDaDireita.position, this.colisorDaEsquerda.position);
 
         float direction = this.transform.localScale.x > 0 ? 1 : -1;
+        float xDirection = this.transform.position.x + (direction == 1 ? 0.5f : -0.5f);
 
         // Desenha na tela duas linhas para detectar se o inimigo pode pular algum bloco.
         Gizmos.DrawLine(this.colisorDaDireita.position, new Vector2(this.colisorDaDireita.position.x + (0.3f * direction), this.colisorDaDireita.position.y));
         Gizmos.DrawLine(this.colisorDaEsquerda.position, new Vector2(this.colisorDaEsquerda.position.x + (0.1f * direction), this.colisorDaEsquerda.position.y));
 
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(new Vector2(this.transform.position.x, this.transform.position.y), new Vector2(this.transform.position.x + (direction == 1 ? 0.4f : -0.4f), this.transform.position.y + this.rangeDown));
+        Gizmos.DrawLine(new Vector2(xDirection, this.transform.position.y), new Vector2(xDirection + (direction == 1 ? 0.4f : -0.4f), this.transform.position.y + this.rangeDown));
 
         ////// Desenha na tela duas linhas para detectar se o player entrou no campo de visão.
         ////Gizmos.color = Color.red;

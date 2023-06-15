@@ -274,7 +274,7 @@ MonoBehaviour:
     m_Bits: 64
   rangeDown: -1.5
   totalDanoRecebidoPorAtaque: 1
-  totalDeVida: 1
+  totalDeVida: 3
   velocidade: 3
   totalDanoPorAtaque: 1
   valorDaForcaParaEmpurrarHeroi: 3
