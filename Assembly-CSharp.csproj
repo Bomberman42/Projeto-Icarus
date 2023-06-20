@@ -102,6 +102,7 @@
     <Compile Include="Assets\Scripts\Ventilador.cs" />
     <Compile Include="Assets\Scripts\FileSystem\PlayerData.cs" />
     <Compile Include="Assets\Scripts\LightsColor.cs" />
+    <Compile Include="Assets\Scripts\CreditScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

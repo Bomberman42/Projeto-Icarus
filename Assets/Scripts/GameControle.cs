@@ -186,6 +186,17 @@ public class GameControle : MonoBehaviour
         }
     }
 
+    private void Credits()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("0_Credit");
+    }
+
+    public void SkipButton()
+    {
+        SceneManager.LoadScene("0_TelaDeFases");
+    }
+
     public void UpdateTotalScore()
     {
         this.playerTotalPoints += this.pontuacaoTotal;
@@ -201,7 +212,7 @@ public class GameControle : MonoBehaviour
         return this.playerTotalPoints;
     }
 
-    private void UpdateLevelList()
+    private void UpdateLevelList(StarScript gameObjectStar)
     {
 
         if(this.levels == null)
@@ -209,22 +220,16 @@ public class GameControle : MonoBehaviour
             this.levels = new List<Level>();
         }
 
-        StarScript gameObjectStar = FindObjectOfType<StarScript>();
         Level level = new Level();
         level.star = gameObjectStar.GetComponent<StarScript>().TypeStar();
         level.type = SceneManager.GetActiveScene().name;
         level.coins = this.pontuacaoTotal.ToString();
         level.time = this.timing.GetComponent<Timer>().GetTime();
         this.levels.Add(level);
-
-        //int index = this.levels.FindIndex(level => level.type == SceneManager.GetActiveScene().name);
-        //if (index >= 0)
-        //{
-
-        //}
     }
 
     public void FinishedStage() {
+        StarScript gameObjectStar = FindObjectOfType<StarScript>();
         ItensColetaveis[] objectsWithScript = FindObjectsOfType<ItensColetaveis>();
         for (int index = 0; index < objectsWithScript.Length; index++)
         {
@@ -234,10 +239,22 @@ public class GameControle : MonoBehaviour
             }
         }
         UpdateTotalScore();
-        UpdateLevelList();
+        UpdateLevelList(gameObjectStar);
         SaveGame();
         SaveLevel();
         this.pontuacaoTotal = 0;
+
+        if (gameObjectStar.TypeStar() == "Gold")
+        {
+            int index = this.levels.FindLastIndex(level => level.type == "lvl_5");
+            //Aqui estamos validando se o player já pegou a estrela dourada pela primeira vez.
+            if (index < 1)
+            {
+                Credits();
+                return;
+            }
+        }
+
         CarregaProximaFase("0_TelaDeFases");
     }
 
